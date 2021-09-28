@@ -1,3 +1,3 @@
-export const LANDING = "/";
-export const HOME = "/home";
+export const HOME = "/";
+export const FIND = "/find";
 export const CREATE = "/create";

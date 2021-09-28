@@ -7,13 +7,13 @@ const Nav = () => (
   <div>
     <ul>
       <li>
-        <Link to={ROUTES.LANDING}>Start</Link>
+        <Link to={ROUTES.HOME}>Hem</Link>
       </li>
       <li>
-        <Link to={ROUTES.HOME}>Home</Link>
+        <Link to={ROUTES.FIND}>Sök annons</Link>
       </li>
       <li>
-        <Link to={ROUTES.CREATE}>Create Ad</Link>
+        <Link to={ROUTES.CREATE}>Skapa annons</Link>
       </li>
     </ul>
   </div>
