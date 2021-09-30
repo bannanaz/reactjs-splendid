@@ -1,10 +1,11 @@
-import { Container } from "@material-ui/core";
+import AdUpload from "../../components/AdUpload";
 
 const Create = () => {
   return (
-    <Container>
-      <p>Hello create</p>
-    </Container>
+    <div>
+      <p>Skapa annons</p>
+      <AdUpload />
+    </div>
   );
 };
 

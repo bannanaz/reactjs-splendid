@@ -3,6 +3,7 @@ import React from "react";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../../styles/theme";
+import Container from "@mui/material/Container";
 
 import Layout from "../Layout";
 import Find from "../../pages/Find";
@@ -18,9 +19,11 @@ const App = () => {
         <CssBaseline />
         <Router>
           <Layout>
-            <Route exact path={ROUTES.HOME} component={Home} />
-            <Route exact path={ROUTES.FIND} component={Find} />
-            <Route exact path={ROUTES.CREATE} component={Create} />
+            <Container>
+              <Route exact path={ROUTES.HOME} component={Home} />
+              <Route exact path={ROUTES.FIND} component={Find} />
+              <Route exact path={ROUTES.CREATE} component={Create} />
+            </Container>
           </Layout>
         </Router>
       </ThemeProvider>

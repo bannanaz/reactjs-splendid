@@ -4,7 +4,7 @@ import { Container } from "@material-ui/core";
 const Find = () => {
   return (
     <Container>
-      <p>Hello find</p>
+      <p>Sök pryl</p>
       <AdCard />
     </Container>
   );

@@ -14,8 +14,9 @@ import bike from "../../assets/bike.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: theme.spacing(2),
+    margin: theme.spacing(0),
     maxWidth: 350,
+    minWidth: 300,
   },
   media: {
     height: 190,

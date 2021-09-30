@@ -24,12 +24,15 @@ const theme = createTheme({
     fontFamily: ["Poppins", "sans-serif"].join(","),
   },
 
-  MuiBottomNavigationAction: {
-    styleOverrides: {
-      label: {
-        color: "#ffffff",
-        fontFamily: "Poppins",
+  overrides: {
+    MuiFormLabel: {
+      root: {
+        "&$focused": {
+          color: "#0B9882",
+        },
       },
+
+      focused: {},
     },
   },
 });
