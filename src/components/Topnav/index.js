@@ -7,7 +7,7 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import SearchIcon from "@mui/icons-material/Search";
 
@@ -46,24 +46,38 @@ export default function Nav() {
           </Link>
           <Box sx={{ flexGrow: 1 }} />
           <Box>
-            <IconButton
+            <Button
               className={classes.button}
               component={Link}
               to={ROUTES.FIND}
+              variant="text"
               size="large"
               color="inherit"
+              sx={{
+                fontFamily: "Poppins",
+                fontWeight: "600",
+                textTransform: "lowercase",
+              }}
+              startIcon={<SearchIcon />}
             >
-              <SearchIcon />
-            </IconButton>
-            <IconButton
+              Sök pryl
+            </Button>
+            <Button
               className={classes.button}
               component={Link}
               to={ROUTES.CREATE}
+              variant="text"
               size="large"
               color="inherit"
+              sx={{
+                fontFamily: "Poppins",
+                fontWeight: "600",
+                textTransform: "lowercase",
+              }}
+              startIcon={<AddCircleOutlineIcon />}
             >
-              <AddCircleOutlineIcon />
-            </IconButton>
+              Skapa annons
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>
