@@ -23,17 +23,6 @@ const theme = createTheme({
   typography: {
     fontFamily: ["Poppins", "sans-serif"].join(","),
   },
-
-  overrides: {
-    MuiFormLabel: {
-      root: {
-        "&$focused": {
-          color: "#0B9882",
-        },
-      },
-
-      focused: {},
-    },
-  },
 });
+
 export default theme;

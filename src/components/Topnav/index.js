@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
+import "../../styles/styles.css";
 
 import { makeStyles } from "@material-ui/core";
 import AppBar from "@mui/material/AppBar";
@@ -22,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     color: theme.palette.secondary.contrastText,
-    textDecoration: "none",
   },
 }));
 
@@ -63,7 +63,6 @@ const Topnav = () => {
               Sök pryl
             </Button>
             <Button
-              className={classes.button}
               component={Link}
               to={ROUTES.CREATE}
               variant="text"

@@ -1,4 +1,4 @@
-import AdUpload from "../../components/AdUpload";
+import AdUpload from "../../components/AdUplodeTextField";
 
 const Create = () => {
   return (

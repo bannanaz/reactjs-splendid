@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import React from "react";
-import { ThemeProvider } from "@material-ui/core/styles";
+import { MuiThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../../styles/theme";
 import Container from "@mui/material/Container";
@@ -15,7 +15,7 @@ import * as ROUTES from "../../constants/routes";
 const App = () => {
   return (
     <>
-      <ThemeProvider theme={theme}>
+      <MuiThemeProvider theme={theme}>
         <CssBaseline />
         <Router>
           <Layout>
@@ -26,7 +26,7 @@ const App = () => {
             </Container>
           </Layout>
         </Router>
-      </ThemeProvider>
+      </MuiThemeProvider>
     </>
   );
 };
