@@ -4,7 +4,9 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../../styles/theme";
 
+import Topnav from "../Topnav";
 import Layout from "../Layout";
+import Bottomnav from "../Bottomnav";
 import Find from "../../pages/Find";
 import Home from "../../pages/Home";
 import Create from "../../pages/Create";

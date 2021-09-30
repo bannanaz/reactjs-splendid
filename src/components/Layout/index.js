@@ -1,6 +1,7 @@
 import { makeStyles } from "@material-ui/core";
 import React from "react";
-import Nav from "../Nav";
+import Bottomnav from "../Bottomnav";
+import Topnav from "../Topnav";
 
 const useStyles = makeStyles((theme) => ({
   page: {
@@ -13,8 +14,9 @@ const Layout = ({ children }) => {
   const classes = useStyles();
   return (
     <div>
-      <Nav />
+      <Topnav />
       <div className={classes.page}>{children}</div>
+      <Bottomnav />
     </div>
   );
 };

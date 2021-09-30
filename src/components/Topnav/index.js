@@ -6,11 +6,10 @@ import { makeStyles } from "@material-ui/core";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import Typography from "@mui/material/Typography";
 import SearchIcon from "@mui/icons-material/Search";
-import MoreIcon from "@mui/icons-material/MoreVert";
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -21,11 +20,14 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     fontWeight: 600,
   },
+  button: {
+    color: theme.palette.secondary.contrastText,
+    textDecoration: "none",
+  },
 }));
 
 export default function Nav() {
   const classes = useStyles();
-
   return (
     <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "flex" } }}>
       <AppBar position="static">
@@ -43,34 +45,24 @@ export default function Nav() {
             </Typography>
           </Link>
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Link className={classes.link} to={ROUTES.FIND}>
-              <IconButton
-                size="large"
-                aria-label="show 4 new mails"
-                color="inherit"
-              >
-                <SearchIcon />
-              </IconButton>
-            </Link>
-            <Link className={classes.link} to={ROUTES.CREATE}>
-              <IconButton
-                size="large"
-                aria-label="show 17 new notifications"
-                color="inherit"
-              >
-                <AddCircleOutlineIcon />
-              </IconButton>
-            </Link>
-          </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
+          <Box>
             <IconButton
+              className={classes.button}
+              component={Link}
+              to={ROUTES.FIND}
               size="large"
-              aria-label="show more"
-              aria-haspopup="true"
               color="inherit"
             >
-              <MoreIcon />
+              <SearchIcon />
+            </IconButton>
+            <IconButton
+              className={classes.button}
+              component={Link}
+              to={ROUTES.CREATE}
+              size="large"
+              color="inherit"
+            >
+              <AddCircleOutlineIcon />
             </IconButton>
           </Box>
         </Toolbar>

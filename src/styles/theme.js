@@ -19,8 +19,18 @@ const theme = createTheme({
       secondary: "#00000",
     },
   },
+
   typography: {
     fontFamily: ["Poppins", "sans-serif"].join(","),
+  },
+
+  MuiBottomNavigationAction: {
+    styleOverrides: {
+      label: {
+        color: "#ffffff",
+        fontFamily: "Poppins",
+      },
+    },
   },
 });
 export default theme;
