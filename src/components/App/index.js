@@ -4,10 +4,10 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../../styles/theme";
 
-import Nav from "../Nav";
-import Find from "../Find";
-import Home from "../Home";
-import Create from "../Create";
+import Layout from "../Layout";
+import Find from "../../pages/Find";
+import Home from "../../pages/Home";
+import Create from "../../pages/Create";
 
 import * as ROUTES from "../../constants/routes";
 
@@ -17,12 +17,11 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Router>
-          <div>
-            <Nav />
+          <Layout>
             <Route exact path={ROUTES.HOME} component={Home} />
             <Route exact path={ROUTES.FIND} component={Find} />
             <Route exact path={ROUTES.CREATE} component={Create} />
-          </div>
+          </Layout>
         </Router>
       </ThemeProvider>
     </>

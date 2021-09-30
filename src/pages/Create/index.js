@@ -1,8 +1,10 @@
+import { Container } from "@material-ui/core";
+
 const Create = () => {
   return (
-    <div>
+    <Container>
       <p>Hello create</p>
-    </div>
+    </Container>
   );
 };
 

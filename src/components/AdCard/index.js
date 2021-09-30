@@ -2,26 +2,31 @@ import React from "react";
 
 import { makeStyles } from "@material-ui/styles";
 import {
+  Button,
   Card,
   CardHeader,
   CardActionArea,
   CardMedia,
   CardActions,
-  Button,
 } from "@material-ui/core";
 
 import bike from "../../assets/bike.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: theme.spacing(3),
-    width: 250,
+    margin: theme.spacing(2),
+    maxWidth: 350,
   },
   media: {
     height: 190,
   },
+
   button: {
-    color: theme.palette.secondary.main,
+    color: theme.palette.secondary.dark,
+    fontSize: 16,
+    fontWeight: 700,
+    fontStyle: "italic",
+    textDecoration: "underline",
   },
 }));
 
@@ -34,6 +39,8 @@ const AdCard = () => {
         className={classes.title}
         title="Annas snabba cykel"
         subheader="500kr/dag, Gröndal"
+        titleTypographyProps={{ variant: "h6" }}
+        subheaderTypographyProps={{ variant: "h7" }}
       />
       <CardActionArea>
         <CardMedia
