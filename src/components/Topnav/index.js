@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Nav() {
+const Topnav = () => {
   const classes = useStyles();
   return (
     <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "flex" } }}>
@@ -83,4 +83,5 @@ export default function Nav() {
       </AppBar>
     </Box>
   );
-}
+};
+export default Topnav;
