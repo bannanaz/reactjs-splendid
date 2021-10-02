@@ -1,0 +1,28 @@
+{
+  "ads": [
+    {
+      "category": "sport",
+      "title": "Annas snygga SUP",
+      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "price": "300 kr/dag",
+      "zip": "11767",
+      "id": 1
+    },
+    {
+      "category": "tools",
+      "title": "Ottos bästa hammare",
+      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "price": "150 kr/dag",
+      "zip": "11767",
+      "id": 2
+    },
+    {
+      "category": "sport",
+      "title": "Olles golvfvagn",
+      "details": "kjskdjkasjdlkas",
+      "price": "lklklk",
+      "zip": "jljlkjl",
+      "id": 3
+    }
+  ]
+}

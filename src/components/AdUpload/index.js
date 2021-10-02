@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 import "../../styles/styles.css";
 import { makeStyles } from "@material-ui/styles";
 import InputLabel from "@mui/material/InputLabel";
@@ -17,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 const AdUpload = () => {
   const classes = useStyles();
+  const history = useHistory();
   const [category, setCategory] = useState("");
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
@@ -58,6 +60,11 @@ const AdUpload = () => {
 
     if (category && title && details && price && zip) {
       console.log(category, title, details, price, zip);
+      fetch("http://localhost:8000/ads", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({ category, title, details, price, zip }),
+      }).then(() => history.push("./"));
     }
   };
 
@@ -81,8 +88,8 @@ const AdUpload = () => {
             onChange={(e) => setCategory(e.target.value)}
             color="grey"
           >
-            <MenuItem value={1}>Sport &amp; Fritid</MenuItem>
-            <MenuItem value={2}>Verktyg</MenuItem>
+            <MenuItem value={"sport"}>Sport &amp; Fritid</MenuItem>
+            <MenuItem value={"tools"}>Verktyg</MenuItem>
           </Select>
         </FormControl>
         <TextField
