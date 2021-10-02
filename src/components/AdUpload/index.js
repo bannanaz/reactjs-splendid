@@ -22,11 +22,13 @@ const AdUpload = () => {
   const [category, setCategory] = useState("");
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
+  const [image, setImage] = useState("");
   const [price, setPrice] = useState("");
   const [zip, setZip] = useState("");
   const [categoryError, setCategoryError] = useState(false);
   const [titleError, setTitleError] = useState(false);
   const [detailsError, setDetailsError] = useState(false);
+  const [imageError, setImageError] = useState(false);
   const [priceError, setPriceError] = useState(false);
   const [zipError, setZipError] = useState(false);
 
@@ -50,6 +52,10 @@ const AdUpload = () => {
       setDetailsError(true);
     }
 
+    if (image === "") {
+      setImageError(true);
+    }
+
     if (price === "") {
       setPriceError(true);
     }
@@ -58,12 +64,12 @@ const AdUpload = () => {
       setZipError(true);
     }
 
-    if (category && title && details && price && zip) {
+    if (category && title && details && image && price && zip) {
       console.log(category, title, details, price, zip);
       fetch("http://localhost:8000/ads", {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify({ category, title, details, price, zip }),
+        body: JSON.stringify({ category, title, details, image, price, zip }),
       }).then(() => history.push("./"));
     }
   };
@@ -115,6 +121,18 @@ const AdUpload = () => {
           rows={3}
           margin="normal"
           error={detailsError}
+        />
+        <TextField
+          onChange={(e) => setImage(e.target.value)}
+          className={classes.root}
+          label="Bild, kopiera in länk ex. https://exempelbild.com"
+          variant="outlined"
+          color="grey"
+          fullWidth
+          required
+          multiline
+          margin="normal"
+          error={imageError}
         />
         <TextField
           onChange={(e) => setPrice(e.target.value)}

@@ -10,18 +10,10 @@ import {
   CardActions,
 } from "@material-ui/core";
 
-import bike from "../../assets/bike.jpg";
-
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: theme.spacing(0),
-    maxWidth: 350,
-    minWidth: 300,
   },
-  media: {
-    height: 190,
-  },
-
   button: {
     color: theme.palette.secondary.dark,
     fontSize: 16,
@@ -31,23 +23,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AdCard = () => {
+const AdCard = ({ ad }) => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} elevation={2}>
       <CardHeader
         className={classes.title}
-        title="Annas snabba cykel"
-        subheader="500kr/dag, Gröndal"
+        title={ad.title}
+        subheader={ad.price + " kr/dag, " + ad.zip}
         titleTypographyProps={{ variant: "h6" }}
         subheaderTypographyProps={{ variant: "h7" }}
       />
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={bike}
+          component="img"
+          height="220"
+          image={ad.image}
           title="Annas snabba cykel"
+          alt="Annas snabba cykel"
         />
       </CardActionArea>
       <CardActions>
