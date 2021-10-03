@@ -5,7 +5,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../../styles/theme";
 import Container from "@mui/material/Container";
 
-import Ad from "../Ad";
+import Ad from "../../pages/Ad";
 import Layout from "../Layout";
 import Find from "../../pages/Find";
 import Home from "../../pages/Home";

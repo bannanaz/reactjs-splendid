@@ -36,7 +36,7 @@ const AdCard = ({ ad }) => {
         titleTypographyProps={{ variant: "h6" }}
         subheaderTypographyProps={{ variant: "h7" }}
       />
-      <CardActionArea>
+      <CardActionArea component={Link} to={`/ad/${ad.id}`}>
         <CardMedia
           className={classes.media}
           component="img"
