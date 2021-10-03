@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/styles";
 import {
@@ -47,9 +48,10 @@ const AdCard = ({ ad }) => {
       </CardActionArea>
       <CardActions>
         <Button
+          component={Link}
+          to={`/ad/${ad.id}`}
           className={classes.button}
           size="large"
-          href="https://unsplash.com/photos/Z05GiksmqYU"
         >
           HYR HÄR!
         </Button>
