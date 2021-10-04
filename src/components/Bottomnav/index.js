@@ -18,6 +18,7 @@ const Bottomnav = () => {
         bottom: 0,
         left: 0,
         right: 0,
+        zIndex: 1,
       }}
       elevation={3}
     >
