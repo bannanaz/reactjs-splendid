@@ -12,6 +12,7 @@ import CardMedia from "@mui/material/CardMedia";
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: theme.spacing(0),
+    textOverflow: "ellipsis",
   },
   title: {
     color: theme.palette.text.primary,
@@ -31,6 +32,7 @@ const AdCard = ({ ad }) => {
           variant: "h6",
           fontFamily: "Poppins",
           fontWeight: "400",
+          noWrap: "true",
         }}
         subheaderTypographyProps={{
           variant: "h7",
@@ -43,8 +45,8 @@ const AdCard = ({ ad }) => {
           component="img"
           height="220"
           image={ad.image}
-          title="Annas snabba cykel"
-          alt="Annas snabba cykel"
+          title={ad.title}
+          alt={ad.title}
         />
       </CardActionArea>
       <CardActions>

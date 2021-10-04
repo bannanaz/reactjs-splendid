@@ -18,7 +18,6 @@ const Layout = ({ children }) => {
       <Header />
       <Topnav />
       <div className={classes.page}>{children}</div>
-      <Bottomnav />
     </div>
   );
 };

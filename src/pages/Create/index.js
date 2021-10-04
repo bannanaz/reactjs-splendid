@@ -1,4 +1,5 @@
 import AdUpload from "../../components/AdUpload";
+import Bottomnav from "../../components/Bottomnav";
 
 const Create = () => {
   return (
@@ -6,6 +7,7 @@ const Create = () => {
       <br></br>
       <p>Skapa annons</p>
       <AdUpload />
+      <Bottomnav />
     </div>
   );
 };

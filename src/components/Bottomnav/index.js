@@ -24,7 +24,7 @@ const Bottomnav = () => {
     >
       <BottomNavigation
         sx={{
-          backgroundColor: "#0B9882",
+          backgroundColor: "#0a8f7a",
         }}
         showLabels
         value={value}

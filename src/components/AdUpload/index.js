@@ -25,12 +25,14 @@ const AdUpload = () => {
   const [image, setImage] = useState("");
   const [price, setPrice] = useState("");
   const [zip, setZip] = useState("");
+  const [email, setEmail] = useState("");
   const [categoryError, setCategoryError] = useState(false);
   const [titleError, setTitleError] = useState(false);
   const [detailsError, setDetailsError] = useState(false);
   const [imageError, setImageError] = useState(false);
   const [priceError, setPriceError] = useState(false);
   const [zipError, setZipError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -64,12 +66,24 @@ const AdUpload = () => {
       setZipError(true);
     }
 
-    if (category && title && details && image && price && zip) {
-      console.log(category, title, details, price, zip);
+    if (email === "") {
+      setEmailError(true);
+    }
+
+    if (category && title && details && image && price && zip && email) {
+      console.log(category, title, details, price, zip, email);
       fetch("http://localhost:8000/ads", {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify({ category, title, details, image, price, zip }),
+        body: JSON.stringify({
+          category,
+          title,
+          details,
+          image,
+          price,
+          zip,
+          email,
+        }),
       }).then(() => history.push("./"));
     }
   };
@@ -156,6 +170,17 @@ const AdUpload = () => {
           margin="normal"
           error={zipError}
         />
+        <TextField
+          onChange={(e) => setEmail(e.target.value)}
+          className={classes.root}
+          label="Email"
+          variant="outlined"
+          color="grey"
+          fullWidth
+          required
+          margin="normal"
+          error={emailError}
+        />
         <br></br>
         <br></br>
         <Button
@@ -167,7 +192,8 @@ const AdUpload = () => {
             fontFamily: "Poppins",
             fontWeight: "600",
             textTransform: "lowercase",
-            backgroundColor: "#0B9882",
+            backgroundColor: "#0a8f7a",
+            mb: 10,
             "&:hover": {
               backgroundColor: "#0B9882",
             },
