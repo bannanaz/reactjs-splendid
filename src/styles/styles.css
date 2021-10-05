@@ -24,3 +24,7 @@
   text-transform: none;
   background-color: #0b9882;
 }
+
+.MuiTypography-root {
+  font-family: "Poppins", sans-serif;
+}

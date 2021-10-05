@@ -16,12 +16,24 @@ const theme = createTheme({
 
     text: {
       primary: "#5F5F5F",
-      secondary: "#363434",
+      secondary: "#0a8f7a",
     },
   },
 
   typography: {
+    useNextVariants: true,
     fontFamily: ["Poppins", "sans-serif"].join(","),
+    h1: {
+      fontFamily: "Poppins",
+      fontSize: 20,
+      fontWeight: 600,
+    },
+    h2: {
+      fontFamily: "Poppins",
+      fontSize: 16,
+      fontWeight: 600,
+      color: "#0a8f7a",
+    },
   },
 });
 

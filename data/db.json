@@ -39,6 +39,26 @@
       "zip": "14171",
       "email": "anlepet@gmail.com",
       "id": 4
+    },
+    {
+      "category": "sport",
+      "title": "Cargobike ",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+      "image": "https://images.unsplash.com/photo-1517132020230-beff8105d397?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2940&q=80",
+      "price": "500",
+      "zip": "14171",
+      "email": "example@gmail.com",
+      "id": 5
+    },
+    {
+      "category": "sport",
+      "title": "Tält för två personer",
+      "details": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+      "image": "https://images.unsplash.com/photo-1562306382-bd835cde5ad5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2940&q=80",
+      "price": "400",
+      "zip": "11237",
+      "email": "example@gmail.com",
+      "id": 6
     }
   ]
 }

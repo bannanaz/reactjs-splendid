@@ -5,9 +5,20 @@ import AdCard from "../../components/AdCard";
 import SportsHandballIcon from "@mui/icons-material/SportsHandball";
 import BuildIcon from "@mui/icons-material/Build";
 import Bottomnav from "../../components/Bottomnav";
+import Categories from "../../components/Categories";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  headers: {
+    fontFamily: "Poppins",
+    fontWeight: "500",
+  },
+}));
 
 const Find = () => {
   const [ads, setAds] = useState([]);
+  const classes = useStyles();
 
   useEffect(() => {
     fetch("http://localhost:8000/ads")
@@ -19,9 +30,18 @@ const Find = () => {
     <>
       <Container>
         <br></br>
-        <p>Kategorier:</p>
-        <p>Sport &amp; fritid</p>
-        <p>Verktyg</p>
+        <br></br>
+        <Typography variant="h2" className={classes.headers}>
+          våra kategorier:
+        </Typography>
+        <br></br>
+        <Categories />
+        <br></br>
+        <br></br>
+        <Typography variant="h2" className={classes.headers}>
+          nya annonser:
+        </Typography>
+        <br></br>
         <Grid container spacing={2}>
           {ads
             .slice(0)
