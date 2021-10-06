@@ -1,12 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  Button,
-  Card,
-  CardHeader,
-  CardMedia,
-  Typography,
-} from "@material-ui/core";
+import Button from "@mui/material/Button";
+import { Card, CardHeader, CardMedia, Typography } from "@material-ui/core";
 
 export const BottomBtn = ({ children, target, rel, href }) => {
   return (
@@ -119,7 +114,7 @@ TopnavBtn.propTypes = {
 
 export const TopnavLogo = ({ children, sx }) => {
   return (
-    <Typography component="div" variant="h5" noWrap sx={sx}>
+    <Typography component="div" variant="h1" noWrap sx={sx}>
       {children}
     </Typography>
   );
@@ -148,11 +143,11 @@ export const SmallCardHeader = ({ children, title, subheader }) => {
       title={title}
       subheader={subheader}
       titleTypographyProps={{
-        variant: "h6",
+        variant: "h3",
         noWrap: "true",
       }}
       subheaderTypographyProps={{
-        variant: "h7",
+        variant: "h4",
         color: "#5F5F5F",
       }}
     />

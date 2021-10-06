@@ -23,29 +23,25 @@ const theme = createTheme({
   typography: {
     useNextVariants: true,
     fontFamily: ["Poppins", "sans-serif"].join(","),
+
     h1: {
-      fontFamily: "Poppins",
-      fontSize: 20,
+      fontSize: 24,
       fontWeight: 600,
     },
     h2: {
-      fontFamily: "Poppins",
-      fontSize: 16,
+      fontSize: 18,
       fontWeight: 600,
       color: "#0a8f7a",
     },
-    h5: {
-      fontFamily: "Poppins",
-      fontWeight: "600",
-    },
-    h6: {
-      fontFamily: "Poppins",
-      fontWeight: "400",
+    h3: {
+      fontSize: 20,
+      fontWeight: "500",
       color: "#5F5F5F",
+      lineHeight: "1.8rem",
     },
 
-    h7: {
-      fontFamily: "Poppins",
+    h4: {
+      fontSize: 14,
       fontWeight: "500",
       color: "#5F5F5F",
     },
