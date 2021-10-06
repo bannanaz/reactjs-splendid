@@ -8,7 +8,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { IconBtn } from "../SmallComponents/Buttons";
+import { IconBtn } from "../DesignElements";
 
 const useStyles = makeStyles((theme) => ({
   root: {

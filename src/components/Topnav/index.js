@@ -7,10 +7,9 @@ import { makeStyles } from "@material-ui/core";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import SearchIcon from "@mui/icons-material/Search";
-import { TopnavBtn } from "../SmallComponents/Buttons";
+import { TopnavBtn, TopnavLogo } from "../DesignElements";
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -21,9 +20,6 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     fontWeight: 600,
   },
-  button: {
-    color: theme.palette.secondary.contrastText,
-  },
 }));
 
 const Topnav = () => {
@@ -33,21 +29,11 @@ const Topnav = () => {
       <AppBar position="static">
         <Toolbar className={classes.toolbar}>
           <Link className={classes.link} to={ROUTES.HOME}>
-            <Typography
-              variant="h5"
-              fontFamily="Poppins"
-              fontWeight="600"
-              noWrap
-              component="div"
-              sx={{ display: { sm: "block" } }}
-            >
-              splendid
-            </Typography>
+            <TopnavLogo sx={{ display: { sm: "block" } }}>splendid</TopnavLogo>
           </Link>
           <Box sx={{ flexGrow: 1 }} />
           <Box>
             <TopnavBtn
-              className={classes.button}
               component={Link}
               to={ROUTES.FIND}
               startIcon={<SearchIcon />}

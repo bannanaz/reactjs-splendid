@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+import { TopnavLogo } from "../DesignElements";
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -27,16 +27,9 @@ const Header = () => {
       <AppBar position="static">
         <Toolbar className={classes.toolbar}>
           <Link className={classes.link} to={ROUTES.HOME}>
-            <Typography
-              variant="h5"
-              fontFamily="Poppins"
-              fontWeight="600"
-              noWrap
-              component="div"
-              sx={{ display: { xs: "block", sm: "none" } }}
-            >
+            <TopnavLogo sx={{ display: { xs: "block", sm: "none" } }}>
               splendid
-            </Typography>
+            </TopnavLogo>
           </Link>
         </Toolbar>
       </AppBar>

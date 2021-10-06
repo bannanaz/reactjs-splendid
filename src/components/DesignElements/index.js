@@ -1,7 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Button from "@mui/material/Button";
-import Card from "@mui/material/Card";
+import {
+  Button,
+  Card,
+  CardHeader,
+  CardMedia,
+  Typography,
+} from "@material-ui/core";
 
 export const BottomBtn = ({ children, target, rel, href }) => {
   return (
@@ -78,7 +83,7 @@ export const TextBtn = ({ children }) => {
         color: "#E37969",
         fontStyle: "italic",
         textDecoration: "underline",
-        fontWeight: "700",
+        fontWeight: "800",
       }}
     >
       {children}
@@ -97,7 +102,7 @@ export const TopnavBtn = ({ children, component, to, startIcon }) => {
       color="inherit"
       sx={{
         fontFamily: "Poppins",
-        fontWeight: "600",
+        fontWeight: "700",
         textTransform: "lowercase",
       }}
     >
@@ -110,4 +115,69 @@ TopnavBtn.propTypes = {
   component: PropTypes.string,
   to: PropTypes.string,
   startIcon: PropTypes.string,
+};
+
+export const TopnavLogo = ({ children, sx }) => {
+  return (
+    <Typography component="div" variant="h5" noWrap sx={sx}>
+      {children}
+    </Typography>
+  );
+};
+
+TopnavBtn.propTypes = {
+  sx: PropTypes.string,
+};
+
+export const SmallCard = ({ children }) => {
+  return (
+    <Card
+      elevation={2}
+      sx={{
+        textOverflow: "ellipsis",
+      }}
+    >
+      {children}
+    </Card>
+  );
+};
+
+export const SmallCardHeader = ({ children, title, subheader }) => {
+  return (
+    <CardHeader
+      title={title}
+      subheader={subheader}
+      titleTypographyProps={{
+        variant: "h6",
+        noWrap: "true",
+      }}
+      subheaderTypographyProps={{
+        variant: "h7",
+        color: "#5F5F5F",
+      }}
+    />
+  );
+};
+
+SmallCardHeader.propTypes = {
+  title: PropTypes.string,
+  subheader: PropTypes.string,
+};
+
+export const SmallCardMedia = ({ image, title, alt }) => {
+  return (
+    <CardMedia
+      image={image}
+      title={title}
+      alt={alt}
+      component="img"
+      height="220"
+    />
+  );
+};
+
+SmallCardMedia.propTypes = {
+  image: PropTypes.string,
+  title: PropTypes.string,
+  alt: PropTypes.string,
 };

@@ -1,60 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { CardActions, CardActionArea } from "@material-ui/core";
 
-import { makeStyles } from "@material-ui/styles";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardActionArea from "@mui/material/CardActionArea";
-import CardHeader from "@mui/material/CardHeader";
-import CardMedia from "@mui/material/CardMedia";
-import { TextBtn } from "../SmallComponents/Buttons";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    margin: theme.spacing(0),
-    textOverflow: "ellipsis",
-  },
-  title: {
-    color: theme.palette.text.primary,
-  },
-}));
+import {
+  SmallCard,
+  SmallCardHeader,
+  SmallCardMedia,
+  TextBtn,
+} from "../DesignElements";
 
 const AdCard = ({ ad }) => {
-  const classes = useStyles();
-
   return (
-    <Card className={classes.root} elevation={2}>
-      <CardHeader
-        className={classes.title}
+    <SmallCard>
+      <SmallCardHeader
         title={ad.title}
         subheader={ad.price + " kr/dag, " + ad.zip}
-        titleTypographyProps={{
-          variant: "h6",
-          fontFamily: "Poppins",
-          fontWeight: "400",
-          noWrap: "true",
-        }}
-        subheaderTypographyProps={{
-          variant: "h7",
-          fontFamily: "Poppins",
-          fontWeight: "500",
-        }}
       />
       <CardActionArea component={Link} to={`/ad/${ad.id}`}>
-        <CardMedia
-          image={ad.image}
-          title={ad.title}
-          alt={ad.title}
-          component="img"
-          height="220"
-        />
+        <SmallCardMedia image={ad.image} title={ad.title} alt={ad.title} />
       </CardActionArea>
       <CardActions>
         <TextBtn component={Link} to={`/ad/${ad.id}`}>
-          HYR HÄR!
+          Hyr här!
         </TextBtn>
       </CardActions>
-    </Card>
+    </SmallCard>
   );
 };
 

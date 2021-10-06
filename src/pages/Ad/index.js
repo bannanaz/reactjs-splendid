@@ -8,7 +8,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardHeader from "@mui/material/CardHeader";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import BottomBtn from "../../components/SmallComponents/Buttons";
+import BottomBtn from "../../components/DesignElements";
 
 const useStyles = makeStyles((theme) => ({
   root: {
