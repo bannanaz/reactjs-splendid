@@ -1,7 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Button from "@mui/material/Button";
-import { Card, CardHeader, CardMedia, Typography } from "@material-ui/core";
+import {
+  Card,
+  CardHeader,
+  CardMedia,
+  FormControl,
+  Typography,
+} from "@material-ui/core";
+import { Select, TextField } from "@mui/material";
 
 export const BottomBtn = ({ children, target, rel, href }) => {
   return (
@@ -175,4 +182,54 @@ SmallCardMedia.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string,
   alt: PropTypes.string,
+};
+
+export const FormControlAdUpload = ({ error }) => {
+  return <FormControl required fullWidth error={error} color="gray" />;
+};
+
+FormControlAdUpload.propTypes = {
+  error: PropTypes.string,
+};
+
+export const TextFieldAdUpload = ({ label, error, rows }) => {
+  return (
+    <TextField
+      label={label}
+      error={error}
+      rows={rows}
+      variant="outlined"
+      margin="normal"
+      fullWidth
+      required
+      multiline
+      InputLabelProps={{
+        style: {
+          fontFamily: "Poppins",
+          fontSize: 14,
+          color: "#5F5F5F",
+        },
+      }}
+      sx={{
+        backgroundColor: "#FFFFFF",
+      }}
+    />
+  );
+};
+
+TextFieldAdUpload.propTypes = {
+  label: PropTypes.string,
+  error: PropTypes.string,
+  rows: PropTypes.string,
+};
+
+export const FormControlSelect = ({ value, id, labelId, label }) => {
+  return <Select value={value} id={id} labelId={labelId} label={label} />;
+};
+
+FormControlSelect.propTypes = {
+  value: PropTypes.string,
+  id: PropTypes.string,
+  labelId: PropTypes.string,
+  label: PropTypes.string,
 };

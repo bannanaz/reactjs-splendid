@@ -1,23 +1,17 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
-import "../../styles/styles.css";
-import { makeStyles } from "@material-ui/styles";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import TextField from "@mui/material/TextField";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { IconBtn } from "../DesignElements";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: theme.palette.primary.contrastText,
-  },
-}));
+import {
+  IconBtn,
+  FormControlAdUpload,
+  TextFieldAdUpload,
+} from "../DesignElements";
 
 const AdUpload = () => {
-  const classes = useStyles();
   const history = useHistory();
   const [category, setCategory] = useState("");
   const [title, setTitle] = useState("");
@@ -90,95 +84,50 @@ const AdUpload = () => {
 
   return (
     <div>
-      <form noValidate autoComplete="off" onSubmit={handleSubmit}>
-        <FormControl
-          required
-          className={classes.root}
-          fullWidth
-          error={categoryError}
-        >
-          <InputLabel id="select-category-label" color="grey">
-            Välj kategori
-          </InputLabel>
+      <form onSubmit={handleSubmit} noValidate autoComplete="off">
+        <FormControlAdUpload error={categoryError}>
+          <InputLabel id="select-category-label">Välj kategori</InputLabel>
           <Select
-            labelId="select-category-label"
-            id="select-category"
-            value={category}
-            label="Välj kategori"
             onChange={(e) => setCategory(e.target.value)}
-            color="grey"
+            value={category}
+            id="select-category"
+            labelId="select-category-label"
+            label="Välj kategori"
           >
             <MenuItem value={"sport"}>Sport &amp; Fritid</MenuItem>
             <MenuItem value={"tools"}>Verktyg</MenuItem>
           </Select>
-        </FormControl>
-        <TextField
+        </FormControlAdUpload>
+        <TextFieldAdUpload
           onChange={(e) => setTitle(e.target.value)}
-          className={classes.root}
           label="Rubrik"
-          variant="outlined"
-          color="grey"
-          fullWidth
-          required
-          margin="normal"
           error={titleError}
         />
-        <TextField
+        <TextFieldAdUpload
           onChange={(e) => setDetails(e.target.value)}
-          className={classes.root}
           label="Beskrivning"
-          variant="outlined"
-          color="grey"
-          fullWidth
-          required
+          error={detailsError}
           multiline
           rows={3}
-          margin="normal"
-          error={detailsError}
         />
-        <TextField
+        <TextFieldAdUpload
           onChange={(e) => setImage(e.target.value)}
-          className={classes.root}
           label="Bild, kopiera in länk ex. https://exempelbild.com"
-          variant="outlined"
-          color="grey"
-          fullWidth
-          required
-          multiline
-          margin="normal"
           error={imageError}
         />
-        <TextField
+        <TextFieldAdUpload
           onChange={(e) => setPrice(e.target.value)}
-          className={classes.root}
           label="Pris per dag"
-          variant="outlined"
-          color="grey"
-          fullWidth
-          required
-          margin="normal"
           error={priceError}
         />
-        <TextField
+        <TextFieldAdUpload
           onChange={(e) => setZip(e.target.value)}
-          className={classes.root}
           label="Postnummer"
-          variant="outlined"
-          color="grey"
-          fullWidth
-          required
-          margin="normal"
           error={zipError}
         />
-        <TextField
+        <TextFieldAdUpload
           onChange={(e) => setEmail(e.target.value)}
-          className={classes.root}
           label="Email"
-          variant="outlined"
-          color="grey"
-          fullWidth
-          required
-          margin="normal"
           error={emailError}
         />
         <br></br>

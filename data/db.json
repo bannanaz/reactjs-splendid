@@ -59,6 +59,36 @@
       "zip": "11237",
       "email": "example@gmail.com",
       "id": 6
+    },
+    {
+      "category": "sport",
+      "title": "hejhej",
+      "details": "hej",
+      "image": "hej",
+      "price": "hej",
+      "zip": "hej",
+      "email": "hej",
+      "id": 7
+    },
+    {
+      "category": "tools",
+      "title": "jkjkj",
+      "details": "jkjkj",
+      "image": "nkjkjk",
+      "price": "jkjklj",
+      "zip": "jkjkjk",
+      "email": "jkjkjk",
+      "id": 8
+    },
+    {
+      "category": "sport",
+      "title": "hello",
+      "details": "hur mår du",
+      "image": "sss",
+      "price": "20",
+      "zip": "18890",
+      "email": "anlepet@gmail.com",
+      "id": 9
     }
   ]
 }
