@@ -7,8 +7,8 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { IconBtn } from "../SmallComponents/Buttons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -183,24 +183,13 @@ const AdUpload = () => {
         />
         <br></br>
         <br></br>
-        <Button
+        <IconBtn
           onClick={handleSubmit}
           type="submit"
-          variant="contained"
           endIcon={<KeyboardArrowRightIcon />}
-          sx={{
-            fontFamily: "Poppins",
-            fontWeight: "600",
-            textTransform: "lowercase",
-            backgroundColor: "#0a8f7a",
-            mb: 10,
-            "&:hover": {
-              backgroundColor: "#0B9882",
-            },
-          }}
         >
           publicera
-        </Button>
+        </IconBtn>
       </form>
     </div>
   );

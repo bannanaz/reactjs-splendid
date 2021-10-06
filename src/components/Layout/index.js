@@ -1,6 +1,5 @@
 import { makeStyles } from "@material-ui/core";
 import React from "react";
-import Bottomnav from "../Bottomnav";
 import Header from "../Header";
 import Topnav from "../Topnav";
 

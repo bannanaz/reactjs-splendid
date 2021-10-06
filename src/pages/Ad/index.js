@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../../styles/styles.css";
-import styled from "styled-components";
 import { makeStyles } from "@material-ui/styles";
 import Card from "@mui/material/Card";
-import Container from "@mui/material/Container";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import CardHeader from "@mui/material/CardHeader";
-import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import BottomBtn from "../../components/SmallComponents/Buttons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -102,25 +99,13 @@ const Ad = () => {
       </Card>
       <br></br>
       <Box display="flex" justifyContent="center">
-        <Button
-          sx={{
-            backgroundColor: "#0a8f7a",
-            fontFamily: "Poppins",
-            fontWeight: 600,
-            textTransform: "none",
-            width: 300,
-            "&:hover": {
-              backgroundColor: "#0B9882",
-            },
-          }}
-          size="large"
-          variant="contained"
+        <BottomBtn
           target="_top"
           rel="noopener noreferrer"
           href={`mailto:${ads.email}`}
         >
           gör en förfrågan
-        </Button>
+        </BottomBtn>
       </Box>
       <br></br>
     </div>

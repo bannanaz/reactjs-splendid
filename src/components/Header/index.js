@@ -28,7 +28,7 @@ const Header = () => {
         <Toolbar className={classes.toolbar}>
           <Link className={classes.link} to={ROUTES.HOME}>
             <Typography
-              variant="h6"
+              variant="h5"
               fontFamily="Poppins"
               fontWeight="600"
               noWrap

@@ -8,9 +8,9 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import SearchIcon from "@mui/icons-material/Search";
+import { TopnavBtn } from "../SmallComponents/Buttons";
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -46,37 +46,21 @@ const Topnav = () => {
           </Link>
           <Box sx={{ flexGrow: 1 }} />
           <Box>
-            <Button
+            <TopnavBtn
               className={classes.button}
               component={Link}
               to={ROUTES.FIND}
-              variant="text"
-              size="large"
-              color="inherit"
-              sx={{
-                fontFamily: "Poppins",
-                fontWeight: "600",
-                textTransform: "lowercase",
-              }}
               startIcon={<SearchIcon />}
             >
               Sök pryl
-            </Button>
-            <Button
+            </TopnavBtn>
+            <TopnavBtn
               component={Link}
               to={ROUTES.CREATE}
-              variant="text"
-              size="large"
-              color="inherit"
-              sx={{
-                fontFamily: "Poppins",
-                fontWeight: "600",
-                textTransform: "lowercase",
-              }}
               startIcon={<AddCircleOutlineIcon />}
             >
               Skapa annons
-            </Button>
+            </TopnavBtn>
           </Box>
         </Toolbar>
       </AppBar>

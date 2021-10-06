@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/styles";
-import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
+import { TextBtn } from "../SmallComponents/Buttons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,28 +42,17 @@ const AdCard = ({ ad }) => {
       />
       <CardActionArea component={Link} to={`/ad/${ad.id}`}>
         <CardMedia
-          component="img"
-          height="220"
           image={ad.image}
           title={ad.title}
           alt={ad.title}
+          component="img"
+          height="220"
         />
       </CardActionArea>
       <CardActions>
-        <Button
-          className={classes.button}
-          component={Link}
-          to={`/ad/${ad.id}`}
-          size="large"
-          sx={{
-            color: "#E37969",
-            fontStyle: "italic",
-            textDecoration: "underline",
-            fontWeight: "700",
-          }}
-        >
+        <TextBtn component={Link} to={`/ad/${ad.id}`}>
           HYR HÄR!
-        </Button>
+        </TextBtn>
       </CardActions>
     </Card>
   );
