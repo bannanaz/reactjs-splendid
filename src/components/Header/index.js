@@ -27,9 +27,7 @@ const Header = () => {
       <AppBar position="static">
         <Toolbar className={classes.toolbar}>
           <Link className={classes.link} to={ROUTES.HOME}>
-            <TopnavLogo sx={{ display: { xs: "block", sm: "none" } }}>
-              splendid
-            </TopnavLogo>
+            <TopnavLogo>splendid</TopnavLogo>
           </Link>
         </Toolbar>
       </AppBar>

@@ -72,7 +72,7 @@ export const IconBtn = ({ children, endIcon, type }) => {
 };
 
 IconBtn.propTypes = {
-  endIcon: PropTypes.string,
+  endIcon: PropTypes.object,
   type: PropTypes.string,
 };
 
@@ -151,10 +151,13 @@ export const SmallCardHeader = ({ children, title, subheader }) => {
       subheader={subheader}
       titleTypographyProps={{
         variant: "h3",
-        noWrap: "true",
       }}
       subheaderTypographyProps={{
         variant: "h4",
+        color: "textPrimary",
+      }}
+      sx={{
+        textOverflow: "ellipsis",
         color: "#5F5F5F",
       }}
     />
@@ -185,11 +188,11 @@ SmallCardMedia.propTypes = {
 };
 
 export const FormControlAdUpload = ({ error }) => {
-  return <FormControl required fullWidth error={error} color="gray" />;
+  return <FormControl required fullWidth error={error} />;
 };
 
 FormControlAdUpload.propTypes = {
-  error: PropTypes.string,
+  error: PropTypes.bool,
 };
 
 export const TextFieldAdUpload = ({ label, error, rows }) => {
@@ -219,8 +222,8 @@ export const TextFieldAdUpload = ({ label, error, rows }) => {
 
 TextFieldAdUpload.propTypes = {
   label: PropTypes.string,
-  error: PropTypes.string,
-  rows: PropTypes.string,
+  error: PropTypes.bool,
+  rows: PropTypes.number,
 };
 
 export const FormControlSelect = ({ value, id, labelId, label }) => {

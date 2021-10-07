@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Container } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import AdCard from "../../components/AdCard";
-import SportsHandballIcon from "@mui/icons-material/SportsHandball";
-import BuildIcon from "@mui/icons-material/Build";
 import Bottomnav from "../../components/Bottomnav";
 import Categories from "../../components/Categories";
 import Typography from "@material-ui/core/Typography";

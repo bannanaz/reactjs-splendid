@@ -3,3 +3,7 @@
   font-family: "Poppins", sans-serif;
   text-transform: lowercase;
 }
+
+.MuiSvgIcon-root {
+  color: white;
+}
