@@ -30,16 +30,15 @@ const Find = () => {
         <br></br>
         <br></br>
         <Typography variant="h2" className={classes.headers}>
-          våra kategorier:
+          sök bland kategorier
         </Typography>
         <br></br>
         <Categories />
         <br></br>
         <br></br>
         <Typography variant="h2" className={classes.headers}>
-          nya annonser:
+          våra nyaste annonser
         </Typography>
-        <br></br>
         <Grid container spacing={2}>
           {ads
             .slice(0)

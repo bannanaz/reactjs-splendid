@@ -1,13 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { CardActions, CardActionArea } from "@material-ui/core";
+import { CardActions, CardActionArea, Button } from "@material-ui/core";
 
-import {
-  SmallCard,
-  SmallCardHeader,
-  SmallCardMedia,
-  TextBtn,
-} from "../DesignElements";
+import { SmallCard, SmallCardHeader, SmallCardMedia } from "../DesignElements";
 
 const AdCard = ({ ad }) => {
   return (
@@ -20,9 +15,14 @@ const AdCard = ({ ad }) => {
         <SmallCardMedia image={ad.image} title={ad.title} alt={ad.title} />
       </CardActionArea>
       <CardActions>
-        <TextBtn component={Link} to={`/ad/${ad.id}`}>
-          Hyr här!
-        </TextBtn>
+        <Button
+          component={Link}
+          to={`/ad/${ad.id}`}
+          variant="text"
+          color="secondary"
+        >
+          HYR HÄR!
+        </Button>
       </CardActions>
     </SmallCard>
   );

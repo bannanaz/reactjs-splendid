@@ -8,7 +8,10 @@ import CardMedia from "@mui/material/CardMedia";
 import CardHeader from "@mui/material/CardHeader";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import BottomBtn from "../../components/DesignElements";
+import { Button } from "@material-ui/core";
+import { MuiThemeProvider } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import theme from "../../styles/theme";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,82 +35,87 @@ const Ad = () => {
 
   return (
     <div>
-      <br></br>
-      <Card
-        elevation={2}
-        sx={{
-          margin: "auto",
-          maxWidth: { xs: 500, sm: 600, md: 700, lg: 800 },
-        }}
-      >
-        <CardMedia
-          component="img"
-          image={ads.image}
-          alt={ads.title}
-          sx={{ maxWidth: { xs: 500, sm: 600, md: 700, lg: 800 } }}
-        />
-        <CardHeader
-          className={classes.title}
-          title={ads.title}
-          subheader={ads.price + " kr/dag, " + ads.zip}
-          titleTypographyProps={{
-            variant: "h6",
-            fontFamily: "Poppins",
-            fontWeight: "400",
-          }}
-          subheaderTypographyProps={{
-            variant: "h7",
-            fontFamily: "Poppins",
-            fontWeight: "500",
-          }}
-        />
-        <CardContent
-          sx={{
-            paddingTop: 0,
-          }}
-        >
-          <Typography
-            className={classes.title}
-            variant="body2"
-            sx={{
-              fontFamily: "Poppins",
-            }}
-          >
-            {ads.details}
-          </Typography>
-          <br></br>
-          <Typography
-            className={classes.title}
-            variant="body2"
-            sx={{
-              fontFamily: "Poppins",
-            }}
-          >
-            Pris:
-          </Typography>
-          <Typography
-            className={classes.title}
-            variant="body2"
-            sx={{
-              fontFamily: "Poppins",
-            }}
-          >
-            {ads.price} kr/dag
-          </Typography>
-        </CardContent>
+      <MuiThemeProvider theme={theme}>
+        <CssBaseline />
         <br></br>
-      </Card>
-      <br></br>
-      <Box display="flex" justifyContent="center">
-        <BottomBtn
-          target="_top"
-          rel="noopener noreferrer"
-          href={`mailto:${ads.email}`}
+        <Card
+          elevation={2}
+          sx={{
+            margin: "auto",
+            maxWidth: { xs: 500, sm: 600, md: 700, lg: 800 },
+          }}
         >
-          gör en förfrågan
-        </BottomBtn>
-      </Box>
-      <br></br>
+          <CardMedia
+            component="img"
+            image={ads.image}
+            alt={ads.title}
+            sx={{ maxWidth: { xs: 500, sm: 600, md: 700, lg: 800 } }}
+          />
+          <CardHeader
+            className={classes.title}
+            title={ads.title}
+            subheader={ads.price + " kr/dag, " + ads.zip}
+            titleTypographyProps={{
+              variant: "h6",
+              fontFamily: "Poppins",
+              fontWeight: "400",
+            }}
+            subheaderTypographyProps={{
+              variant: "h7",
+              fontFamily: "Poppins",
+              fontWeight: "500",
+            }}
+          />
+          <CardContent
+            sx={{
+              paddingTop: 0,
+            }}
+          >
+            <Typography
+              className={classes.title}
+              variant="body2"
+              sx={{
+                fontFamily: "Poppins",
+              }}
+            >
+              {ads.details}
+            </Typography>
+            <br></br>
+            <Typography
+              className={classes.title}
+              variant="body2"
+              sx={{
+                fontFamily: "Poppins",
+              }}
+            >
+              Pris:
+            </Typography>
+            <Typography
+              className={classes.title}
+              variant="body2"
+              sx={{
+                fontFamily: "Poppins",
+              }}
+            >
+              {ads.price} kr/dag
+            </Typography>
+          </CardContent>
+          <br></br>
+        </Card>
+        <br></br>
+        <Box display="flex" justifyContent="center">
+          <Button
+            variant="contained"
+            color="primary"
+            target="_top"
+            rel="noopener noreferrer"
+            href={`mailto:${ads.email}`}
+          >
+            gör en förfrågan
+          </Button>
+        </Box>
+        <br></br>
+      </MuiThemeProvider>
     </div>
   );
 };

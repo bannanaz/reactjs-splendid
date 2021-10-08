@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
 import "../../styles/styles.css";
 
-import { makeStyles } from "@material-ui/core";
+import { Button, makeStyles } from "@material-ui/core";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import SearchIcon from "@mui/icons-material/Search";
-import { TopnavBtn, TopnavLogo } from "../DesignElements";
+import { TopnavLogo } from "../DesignElements";
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -33,20 +33,24 @@ const Topnav = () => {
           </Link>
           <Box sx={{ flexGrow: 1 }} />
           <Box>
-            <TopnavBtn
+            <Button
+              variant="text"
+              color="primary"
               component={Link}
               to={ROUTES.FIND}
               startIcon={<SearchIcon />}
             >
-              Sök pryl
-            </TopnavBtn>
-            <TopnavBtn
+              sök pryl
+            </Button>
+            <Button
+              variant="text"
+              color="primary"
               component={Link}
               to={ROUTES.CREATE}
               startIcon={<AddCircleOutlineIcon />}
             >
-              Skapa annons
-            </TopnavBtn>
+              skapa annons
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>

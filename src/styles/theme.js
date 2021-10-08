@@ -14,6 +14,10 @@ const theme = createTheme({
       contrastText: "#fff",
     },
 
+    info: {
+      main: "#FFFFFF",
+    },
+
     text: {
       primary: "#5F5F5F",
       secondary: "#0a8f7a",
@@ -47,5 +51,93 @@ const theme = createTheme({
     },
   },
 });
+
+/*--- Props overrides -----*/
+
+theme.props = {
+  MuiTextField: {
+    variant: "filled",
+    fullWidth: true,
+    required: true,
+    margin: "normal",
+  },
+
+  MuiSelect: {
+    root: {
+      required: true,
+      autoWidth: true,
+    },
+  },
+};
+
+/*--- Style overrides -----*/
+
+theme.overrides = {
+  MuiButton: {
+    root: {
+      textTransform: "none",
+      fontSize: "16px",
+      fontWeight: "600",
+      border: "none",
+    },
+    containedPrimary: {
+      "&:hover": {
+        backgroundColor: "#0B9882",
+      },
+    },
+
+    textPrimary: {
+      color: "#FFFFFF",
+    },
+
+    textSecondary: {
+      fontStyle: "italic",
+      textDecoration: "underline",
+    },
+
+    endIcon: {
+      color: "#FFFFFF",
+    },
+    startIcon: {
+      color: "#FFFFFF",
+    },
+  },
+
+  MuiTextField: {
+    root: {
+      backgroundColor: "#FFFFFF",
+      color: "#FFFFFF",
+    },
+  },
+
+  MuiInputLabel: {
+    root: {
+      color: "#5F5F5F",
+      fontSize: 14,
+    },
+    containedPrimary: {
+      "&:hover": {
+        backgroundColor: "#0B9882",
+      },
+    },
+  },
+
+  MuiSelect: {
+    root: {
+      color: "#5F5F5F",
+      fontSize: 14,
+      width: 200,
+    },
+    label: {
+      padding: 18,
+    },
+  },
+
+  MuiPaper: {
+    root: {
+      margin: 20,
+    },
+  },
+};
 
 export default theme;

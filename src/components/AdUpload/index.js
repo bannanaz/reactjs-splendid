@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import Select from "@mui/material/Select";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-
 import {
-  IconBtn,
-  FormControlAdUpload,
-  TextFieldAdUpload,
-} from "../DesignElements";
+  Button,
+  FormControl,
+  TextField,
+  Select,
+  InputLabel,
+  MenuItem,
+  Typography,
+} from "@material-ui/core";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { MuiThemeProvider } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import theme from "../../styles/theme";
+import { Paper } from "@mui/material";
 
 const AdUpload = () => {
   const history = useHistory();
@@ -81,65 +85,82 @@ const AdUpload = () => {
       }).then(() => history.push("./"));
     }
   };
+  const handleChange = (event) => {
+    setCategory(event.target.value);
+  };
 
   return (
     <div>
-      <form onSubmit={handleSubmit} noValidate autoComplete="off">
-        <FormControlAdUpload error={categoryError}>
-          <InputLabel id="select-category-label">Välj kategori</InputLabel>
-          <Select
-            onChange={(e) => setCategory(e.target.value)}
-            value={category}
-            id="select-category"
-            labelId="select-category-label"
-            label="Välj kategori"
-          >
-            <MenuItem value={"sport"}>Sport &amp; Fritid</MenuItem>
-            <MenuItem value={"tools"}>Verktyg</MenuItem>
-          </Select>
-        </FormControlAdUpload>
-        <TextFieldAdUpload
-          onChange={(e) => setTitle(e.target.value)}
-          label="Rubrik"
-          error={titleError}
-        />
-        <TextFieldAdUpload
-          onChange={(e) => setDetails(e.target.value)}
-          label="Beskrivning"
-          error={detailsError}
-          multiline
-          rows={3}
-        />
-        <TextFieldAdUpload
-          onChange={(e) => setImage(e.target.value)}
-          label="Bild, kopiera in länk ex. https://exempelbild.com"
-          error={imageError}
-        />
-        <TextFieldAdUpload
-          onChange={(e) => setPrice(e.target.value)}
-          label="Pris per dag"
-          error={priceError}
-        />
-        <TextFieldAdUpload
-          onChange={(e) => setZip(e.target.value)}
-          label="Postnummer"
-          error={zipError}
-        />
-        <TextFieldAdUpload
-          onChange={(e) => setEmail(e.target.value)}
-          label="Email"
-          error={emailError}
-        />
-        <br></br>
-        <br></br>
-        <IconBtn
-          onClick={handleSubmit}
-          type="submit"
-          endIcon={<KeyboardArrowRightIcon />}
-        >
-          publicera
-        </IconBtn>
-      </form>
+      <MuiThemeProvider theme={theme}>
+        <CssBaseline />
+        <Paper sx={{ padding: 3 }}>
+          <Typography variant="h2">skapa annons</Typography>
+          <form onSubmit={handleSubmit} noValidate autoComplete="off">
+            <FormControl
+              error={categoryError}
+              required
+              variant="filled"
+              margin="normal"
+              sx={{ m: 1, minWidth: 120 }}
+            >
+              <InputLabel id="select-filled-label">Välj kategori:</InputLabel>
+              <Select
+                labelId="select-filled-label"
+                id="select-filled"
+                value={category}
+                onChange={handleChange}
+              >
+                <MenuItem value={"sport"}>Sport</MenuItem>
+                <MenuItem value={"tools"}>Tools</MenuItem>
+              </Select>
+            </FormControl>
+            <TextField
+              onChange={(e) => setTitle(e.target.value)}
+              label="Rubrik"
+              error={titleError}
+            />
+            <TextField
+              onChange={(e) => setDetails(e.target.value)}
+              label="Beskrivning"
+              error={detailsError}
+              multiline
+              rows={3}
+            />
+            <TextField
+              onChange={(e) => setImage(e.target.value)}
+              label="Bild, kopiera in länk ex. https://exempelbild.com"
+              error={imageError}
+            />
+            <TextField
+              onChange={(e) => setPrice(e.target.value)}
+              label="Pris per dag"
+              error={priceError}
+            />
+            <TextField
+              onChange={(e) => setZip(e.target.value)}
+              label="Postnummer"
+              error={zipError}
+            />
+            <TextField
+              onChange={(e) => setEmail(e.target.value)}
+              label="Email"
+              error={emailError}
+            />
+            <br></br>
+            <br></br>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleSubmit}
+              type="submit"
+              endIcon={<KeyboardArrowRightIcon />}
+            >
+              publicera
+            </Button>
+          </form>
+          <br></br>
+        </Paper>
+      </MuiThemeProvider>
     </div>
   );
 };

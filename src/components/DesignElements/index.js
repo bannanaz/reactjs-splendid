@@ -1,14 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Button from "@mui/material/Button";
-import {
-  Card,
-  CardHeader,
-  CardMedia,
-  FormControl,
-  Typography,
-} from "@material-ui/core";
-import { Select, TextField } from "@mui/material";
+import { Card, CardHeader, CardMedia, Typography } from "@material-ui/core";
 
 export const BottomBtn = ({ children, target, rel, href }) => {
   return (
@@ -24,6 +17,7 @@ export const BottomBtn = ({ children, target, rel, href }) => {
         color: "#FFFFFF",
         fontFamily: "Poppins",
         fontWeight: 600,
+        fontSize: "16px",
         textTransform: "none",
         border: "none",
         width: 300,
@@ -46,89 +40,12 @@ BottomBtn.propTypes = {
 
 export default BottomBtn;
 
-export const IconBtn = ({ children, endIcon, type }) => {
+export const TopnavLogo = ({ children }) => {
   return (
-    <Button
-      variant="conatined"
-      size="large"
-      type={type}
-      endIcon={endIcon}
-      sx={{
-        backgroundColor: "#0a8f7a",
-        color: "#FFFFFF",
-        fontFamily: "Poppins",
-        fontWeight: 600,
-        textTransform: "none",
-        border: "none",
-        mb: 10,
-        "&:hover": {
-          backgroundColor: "#0B9882",
-        },
-      }}
-    >
-      {children}
-    </Button>
-  );
-};
-
-IconBtn.propTypes = {
-  endIcon: PropTypes.object,
-  type: PropTypes.string,
-};
-
-export const TextBtn = ({ children }) => {
-  return (
-    <Button
-      variant="text"
-      size="large"
-      sx={{
-        color: "#E37969",
-        fontStyle: "italic",
-        textDecoration: "underline",
-        fontWeight: "800",
-      }}
-    >
-      {children}
-    </Button>
-  );
-};
-
-export const TopnavBtn = ({ children, component, to, startIcon }) => {
-  return (
-    <Button
-      component={component}
-      to={to}
-      startIcon={startIcon}
-      variant="text"
-      size="large"
-      color="inherit"
-      sx={{
-        fontFamily: "Poppins",
-        fontWeight: "700",
-        textTransform: "lowercase",
-      }}
-    >
-      {children}
-    </Button>
-  );
-};
-
-TopnavBtn.propTypes = {
-  component: PropTypes.string,
-  to: PropTypes.string,
-  startIcon: PropTypes.string,
-};
-
-export const TopnavLogo = ({ children, sx }) => {
-  return (
-    <Typography component="div" variant="h1" noWrap sx={sx}>
+    <Typography component="div" variant="h1" noWrap>
       {children}
     </Typography>
   );
-};
-
-TopnavBtn.propTypes = {
-  sx: PropTypes.string,
 };
 
 export const SmallCard = ({ children }) => {
@@ -185,54 +102,4 @@ SmallCardMedia.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string,
   alt: PropTypes.string,
-};
-
-export const FormControlAdUpload = ({ error }) => {
-  return <FormControl required fullWidth error={error} />;
-};
-
-FormControlAdUpload.propTypes = {
-  error: PropTypes.bool,
-};
-
-export const TextFieldAdUpload = ({ label, error, rows }) => {
-  return (
-    <TextField
-      label={label}
-      error={error}
-      rows={rows}
-      variant="outlined"
-      margin="normal"
-      fullWidth
-      required
-      multiline
-      InputLabelProps={{
-        style: {
-          fontFamily: "Poppins",
-          fontSize: 14,
-          color: "#5F5F5F",
-        },
-      }}
-      sx={{
-        backgroundColor: "#FFFFFF",
-      }}
-    />
-  );
-};
-
-TextFieldAdUpload.propTypes = {
-  label: PropTypes.string,
-  error: PropTypes.bool,
-  rows: PropTypes.number,
-};
-
-export const FormControlSelect = ({ value, id, labelId, label }) => {
-  return <Select value={value} id={id} labelId={labelId} label={label} />;
-};
-
-FormControlSelect.propTypes = {
-  value: PropTypes.string,
-  id: PropTypes.string,
-  labelId: PropTypes.string,
-  label: PropTypes.string,
 };

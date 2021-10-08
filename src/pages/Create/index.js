@@ -1,13 +1,18 @@
 import AdUpload from "../../components/AdUpload";
 import Bottomnav from "../../components/Bottomnav";
+import { MuiThemeProvider } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import theme from "../../styles/theme";
 
 const Create = () => {
   return (
     <div>
-      <br></br>
-      <p>Skapa annons</p>
-      <AdUpload />
-      <Bottomnav />
+      <MuiThemeProvider theme={theme}>
+        <CssBaseline />
+        <br></br>
+        <AdUpload />
+        <Bottomnav />
+      </MuiThemeProvider>
     </div>
   );
 };
