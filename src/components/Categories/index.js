@@ -1,68 +1,69 @@
 import React from "react";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
+import styled from "styled-components";
+import { ListItemText, Divider } from "@material-ui/core";
+import { ListItemButton } from "@mui/material";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
-import Divider from "@mui/material/Divider";
-import SportsTennisIcon from "@mui/icons-material/SportsTennis";
-import BuildIcon from "@mui/icons-material/Build";
-import "../../styles/styles.css";
+import Icon from "@material-ui/core/Icon";
+import List from "@mui/material/List";
+
+const CategoryList = styled(List)`
+  width: 100%;
+  background-color: #f2f9f6;
+`;
+
+const CategoryListItemButton = styled(ListItemButton)`
+  background-color: #ffffff;
+  border-radius: 4px;
+`;
+
+const StyledDivider = styled(Divider)`
+  background-color: #f2f9f6;
+  height: 5px;
+`;
+
+const StyledAvatar = styled(Avatar)`
+  background-color: #0a8f7a;
+`;
+
+const StyledArrowIcon = styled(Icon)`
+  color: #0a8f7a;
+  font-size: 2.5rem;
+`;
 
 const Categories = () => {
+  let categories = [
+    {
+      id: "1",
+      icon: "sports_tennis",
+      category: "sport & fritid",
+      path: "/sports",
+    },
+    { id: "2", icon: "build", category: "verktyg", path: "/tools" },
+  ];
+
   return (
-    <List
-      sx={{
-        width: "100%",
-        bgcolor: "background.paper",
-      }}
-    >
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar
-            sx={{
-              bgcolor: "#0a8f7a",
-            }}
-          >
-            <SportsTennisIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText
-          primary="sport &amp; fritid"
-          primaryTypographyProps={{
-            fontFamily: "Poppins",
-            color: "#0a8f7a",
-            fontWeight: "500",
-          }}
-        />
-      </ListItem>
-      <Divider
-        sx={{ bgcolor: "#F2F9F6" }}
-        style={{
-          border: "none",
-          height: 4,
-        }}
-      />
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar
-            sx={{
-              bgcolor: "#0a8f7a",
-            }}
-          >
-            <BuildIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText
-          primary="verktyg"
-          primaryTypographyProps={{
-            fontFamily: "Poppins",
-            color: "#0a8f7a",
-            fontWeight: "500",
-          }}
-        />
-      </ListItem>
-    </List>
+    <CategoryList>
+      {categories.map((category) => (
+        <div key={category.id}>
+          <CategoryListItemButton sx={{ boxShadow: 2 }}>
+            <ListItemAvatar>
+              <StyledAvatar>
+                <Icon>{category.icon}</Icon>
+              </StyledAvatar>
+            </ListItemAvatar>
+            <ListItemText
+              primary={category.category}
+              primaryTypographyProps={{
+                variant: "subtitle1",
+              }}
+            />
+            <StyledArrowIcon>keyboard_arrow_right</StyledArrowIcon>
+          </CategoryListItemButton>
+          <StyledDivider />
+        </div>
+      ))}
+    </CategoryList>
   );
 };
 

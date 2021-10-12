@@ -20,7 +20,7 @@ const theme = createTheme({
 
     text: {
       primary: "#5F5F5F",
-      secondary: "#0a8f7a",
+      secondary: "#09806d",
     },
   },
 
@@ -34,19 +34,32 @@ const theme = createTheme({
     },
     h2: {
       fontSize: 18,
+      marginBottom: 18,
       fontWeight: 600,
       color: "#09806d",
+      lineHeight: 1.5,
     },
     h3: {
       fontSize: 20,
       fontWeight: "500",
       color: "#5F5F5F",
-      lineHeight: "1.8rem",
+      lineHeight: 1.7,
     },
 
     h4: {
-      fontSize: 14,
+      fontSize: 16,
       fontWeight: "500",
+      color: "#5F5F5F",
+    },
+
+    subtitle1: {
+      fontWeight: 500,
+      color: "#09806d",
+      fontFamily: "Poppins",
+    },
+
+    body1: {
+      fontFamily: "Poppins",
       color: "#5F5F5F",
     },
   },
@@ -66,6 +79,12 @@ theme.props = {
     root: {
       required: true,
       autoWidth: true,
+    },
+  },
+
+  MuiPaper: {
+    root: {
+      elevation: "2",
     },
   },
 };
@@ -103,22 +122,10 @@ theme.overrides = {
     },
   },
 
-  MuiTextField: {
-    root: {
-      backgroundColor: "#FFFFFF",
-      color: "#FFFFFF",
-    },
-  },
-
   MuiInputLabel: {
     root: {
       color: "#5F5F5F",
       fontSize: 14,
-    },
-    containedPrimary: {
-      "&:hover": {
-        backgroundColor: "#0B9882",
-      },
     },
   },
 
@@ -127,15 +134,6 @@ theme.overrides = {
       color: "#5F5F5F",
       fontSize: 14,
       width: 200,
-    },
-    label: {
-      padding: 18,
-    },
-  },
-
-  MuiPaper: {
-    root: {
-      margin: 20,
     },
   },
 };

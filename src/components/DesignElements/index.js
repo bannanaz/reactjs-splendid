@@ -1,7 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Button from "@mui/material/Button";
-import { Card, CardHeader, CardMedia, Typography } from "@material-ui/core";
+import {
+  Card,
+  CardHeader,
+  CardMedia,
+  Grid,
+  Typography,
+} from "@material-ui/core";
+import { Paper } from "@mui/material";
 
 export const BottomBtn = ({ children, target, rel, href }) => {
   return (
@@ -53,7 +60,10 @@ export const SmallCard = ({ children }) => {
     <Card
       elevation={2}
       sx={{
-        textOverflow: "ellipsis",
+        minWidth: 250,
+        maxWidth: 400,
+        padding: 0,
+        margin: 0,
       }}
     >
       {children}
@@ -61,7 +71,7 @@ export const SmallCard = ({ children }) => {
   );
 };
 
-export const SmallCardHeader = ({ children, title, subheader }) => {
+export const CardHeaderGlbl = ({ title, subheader }) => {
   return (
     <CardHeader
       title={title}
@@ -73,15 +83,11 @@ export const SmallCardHeader = ({ children, title, subheader }) => {
         variant: "h4",
         color: "textPrimary",
       }}
-      sx={{
-        textOverflow: "ellipsis",
-        color: "#5F5F5F",
-      }}
     />
   );
 };
 
-SmallCardHeader.propTypes = {
+CardHeaderGlbl.propTypes = {
   title: PropTypes.string,
   subheader: PropTypes.string,
 };
@@ -102,4 +108,22 @@ SmallCardMedia.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string,
   alt: PropTypes.string,
+};
+
+export const GridSingleCol = ({ children }) => {
+  return (
+    <Grid
+      container
+      spacing={0}
+      direction="column"
+      alignItems="center"
+      justifyContent="center"
+    >
+      {children}
+    </Grid>
+  );
+};
+
+export const PaperAdUpload = ({ children }) => {
+  return <Paper sx={{ padding: 3 }}>{children}</Paper>;
 };

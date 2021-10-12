@@ -1,22 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import AdCard from "../../components/AdCard";
 import Bottomnav from "../../components/Bottomnav";
 import Categories from "../../components/Categories";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core";
-
-const useStyles = makeStyles((theme) => ({
-  headers: {
-    fontFamily: "Poppins",
-    fontWeight: "500",
-  },
-}));
+import { Container } from "@material-ui/core";
 
 const Find = () => {
   const [ads, setAds] = useState([]);
-  const classes = useStyles();
 
   useEffect(() => {
     fetch("http://localhost:8000/ads")
@@ -29,17 +20,12 @@ const Find = () => {
       <Container>
         <br></br>
         <br></br>
-        <Typography variant="h2" className={classes.headers}>
-          sök bland kategorier
-        </Typography>
-        <br></br>
+        <Typography variant="h2">sök bland kategorier</Typography>
         <Categories />
         <br></br>
         <br></br>
-        <Typography variant="h2" className={classes.headers}>
-          våra nyaste annonser
-        </Typography>
-        <Grid container spacing={2}>
+        <Typography variant="h2">våra nyaste annonser</Typography>
+        <Grid container spacing={3}>
           {ads
             .slice(0)
             .reverse()

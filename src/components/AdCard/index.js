@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { CardActions, CardActionArea, Button } from "@material-ui/core";
 
-import { SmallCard, SmallCardHeader, SmallCardMedia } from "../DesignElements";
+import { CardHeaderGlbl, SmallCard, SmallCardMedia } from "../DesignElements";
 
 const AdCard = ({ ad }) => {
   return (
     <SmallCard>
-      <SmallCardHeader
+      <CardHeaderGlbl
         title={ad.title}
         subheader={ad.price + " kr/dag, " + ad.zip}
       />

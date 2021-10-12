@@ -8,12 +8,10 @@ import {
   InputLabel,
   MenuItem,
   Typography,
+  Grid,
 } from "@material-ui/core";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { MuiThemeProvider } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import theme from "../../styles/theme";
-import { Paper } from "@mui/material";
+import { GridSingleCol, PaperAdUpload } from "../DesignElements";
 
 const AdUpload = () => {
   const history = useHistory();
@@ -85,15 +83,11 @@ const AdUpload = () => {
       }).then(() => history.push("./"));
     }
   };
-  const handleChange = (event) => {
-    setCategory(event.target.value);
-  };
 
   return (
-    <div>
-      <MuiThemeProvider theme={theme}>
-        <CssBaseline />
-        <Paper sx={{ padding: 3 }}>
+    <GridSingleCol>
+      <Grid item xs={12} sm={9} lg={8} margin="auto">
+        <PaperAdUpload>
           <Typography variant="h2">skapa annons</Typography>
           <form onSubmit={handleSubmit} noValidate autoComplete="off">
             <FormControl
@@ -108,7 +102,7 @@ const AdUpload = () => {
                 labelId="select-filled-label"
                 id="select-filled"
                 value={category}
-                onChange={handleChange}
+                onChange={(e) => setCategory(e.target.value)}
               >
                 <MenuItem value={"sport"}>Sport</MenuItem>
                 <MenuItem value={"tools"}>Tools</MenuItem>
@@ -159,9 +153,9 @@ const AdUpload = () => {
             </Button>
           </form>
           <br></br>
-        </Paper>
-      </MuiThemeProvider>
-    </div>
+        </PaperAdUpload>
+      </Grid>
+    </GridSingleCol>
   );
 };
 

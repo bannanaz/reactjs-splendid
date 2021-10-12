@@ -5,20 +5,13 @@ import { makeStyles } from "@material-ui/styles";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import CardHeader from "@mui/material/CardHeader";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import { Button } from "@material-ui/core";
-import { MuiThemeProvider } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import theme from "../../styles/theme";
+import { Button, Container, Grid, Typography } from "@material-ui/core";
+import { CardHeaderGlbl, GridSingleCol } from "../../components/DesignElements";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: theme.spacing(0),
-  },
-  title: {
-    color: theme.palette.text.primary,
   },
 }));
 
@@ -34,74 +27,26 @@ const Ad = () => {
   }, [id]);
 
   return (
-    <div>
-      <MuiThemeProvider theme={theme}>
-        <CssBaseline />
+    <Container>
+      <GridSingleCol>
         <br></br>
-        <Card
-          elevation={2}
-          sx={{
-            margin: "auto",
-            maxWidth: { xs: 500, sm: 600, md: 700, lg: 800 },
-          }}
-        >
-          <CardMedia
-            component="img"
-            image={ads.image}
-            alt={ads.title}
-            sx={{ maxWidth: { xs: 500, sm: 600, md: 700, lg: 800 } }}
-          />
-          <CardHeader
-            className={classes.title}
-            title={ads.title}
-            subheader={ads.price + " kr/dag, " + ads.zip}
-            titleTypographyProps={{
-              variant: "h6",
-              fontFamily: "Poppins",
-              fontWeight: "400",
-            }}
-            subheaderTypographyProps={{
-              variant: "h7",
-              fontFamily: "Poppins",
-              fontWeight: "500",
-            }}
-          />
-          <CardContent
-            sx={{
-              paddingTop: 0,
-            }}
-          >
-            <Typography
+        <Grid item xs={12} sm={9} lg={8} margin="auto">
+          <Card elevation={2}>
+            <CardMedia component="img" image={ads.image} alt={ads.title} />
+            <CardHeaderGlbl
               className={classes.title}
-              variant="body2"
-              sx={{
-                fontFamily: "Poppins",
-              }}
-            >
-              {ads.details}
-            </Typography>
+              title={ads.title}
+              subheader={ads.price + " kr/dag, " + ads.zip}
+            />
+            <CardContent>
+              <Typography variant="body1">{ads.details}</Typography>
+              <br></br>
+              <Typography variant="body1">Pris:</Typography>
+              <Typography variant="body1">{ads.price} kr/dag</Typography>
+            </CardContent>
             <br></br>
-            <Typography
-              className={classes.title}
-              variant="body2"
-              sx={{
-                fontFamily: "Poppins",
-              }}
-            >
-              Pris:
-            </Typography>
-            <Typography
-              className={classes.title}
-              variant="body2"
-              sx={{
-                fontFamily: "Poppins",
-              }}
-            >
-              {ads.price} kr/dag
-            </Typography>
-          </CardContent>
-          <br></br>
-        </Card>
+          </Card>
+        </Grid>
         <br></br>
         <Box display="flex" justifyContent="center">
           <Button
@@ -115,8 +60,8 @@ const Ad = () => {
           </Button>
         </Box>
         <br></br>
-      </MuiThemeProvider>
-    </div>
+      </GridSingleCol>
+    </Container>
   );
 };
 export default Ad;
