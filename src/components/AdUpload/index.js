@@ -104,8 +104,8 @@ const AdUpload = () => {
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               >
-                <MenuItem value={"sport"}>Sport</MenuItem>
-                <MenuItem value={"tools"}>Tools</MenuItem>
+                <MenuItem value={"Sport & fritid"}>Sport &amp; fritid</MenuItem>
+                <MenuItem value={"Verktyg"}>Verktyg</MenuItem>
               </Select>
             </FormControl>
             <TextField

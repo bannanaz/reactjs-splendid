@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../../styles/styles.css";
-import { makeStyles } from "@material-ui/styles";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -9,14 +8,7 @@ import Box from "@mui/material/Box";
 import { Button, Container, Grid, Typography } from "@material-ui/core";
 import { CardHeaderGlbl, GridSingleCol } from "../../components/DesignElements";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    margin: theme.spacing(0),
-  },
-}));
-
 const Ad = () => {
-  const classes = useStyles();
   const { id } = useParams();
   const [ads, setAds] = useState([]);
 
@@ -34,7 +26,6 @@ const Ad = () => {
           <Card elevation={2}>
             <CardMedia component="img" image={ads.image} alt={ads.title} />
             <CardHeaderGlbl
-              className={classes.title}
               title={ads.title}
               subheader={ads.price + " kr/dag, " + ads.zip}
             />

@@ -34,7 +34,7 @@ const theme = createTheme({
     },
     h2: {
       fontSize: 18,
-      marginBottom: 18,
+      marginBottom: 20,
       fontWeight: 600,
       color: "#09806d",
       lineHeight: 1.5,
@@ -54,7 +54,7 @@ const theme = createTheme({
 
     subtitle1: {
       fontWeight: 500,
-      color: "#09806d",
+      color: "#5F5F5F",
       fontFamily: "Poppins",
     },
 

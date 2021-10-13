@@ -1,30 +1,28 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Grid, Typography } from "@material-ui/core";
 
 import AdCard from "../../components/AdCard";
 import Bottomnav from "../../components/Bottomnav";
-import Categories from "../../components/Categories";
 
-const Find = () => {
+const FilteredAdsByCategory = () => {
+  const { category } = useParams();
   const [ads, setAds] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8000/ads")
+    fetch(`http://localhost:8000/ads`)
       .then((res) => res.json())
       .then((data) => setAds(data));
-  }, []);
+  }, [category]);
 
   return (
-    <div>
+    <>
       <br></br>
       <br></br>
-      <Typography variant="h2">Sök bland kategorier</Typography>
-      <Categories />
-      <br></br>
-      <br></br>
-      <Typography variant="h2">Våra nyaste annonser</Typography>
+      <Typography variant="h2">{category}</Typography>
       <Grid container spacing={3}>
         {ads
+          .filter((item) => item.category === category)
           .slice(0)
           .reverse()
           .map((ad) => (
@@ -34,8 +32,8 @@ const Find = () => {
           ))}
       </Grid>
       <Bottomnav />
-    </div>
+    </>
   );
 };
 
-export default Find;
+export default FilteredAdsByCategory;

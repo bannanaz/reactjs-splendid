@@ -1,15 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { ListItemText, Divider } from "@material-ui/core";
-import { ListItemButton } from "@mui/material";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-import Avatar from "@mui/material/Avatar";
+import { Link } from "react-router-dom";
+import { ListItemText, Divider, Avatar, List } from "@material-ui/core";
+import { ListItemAvatar, ListItemButton } from "@mui/material";
 import Icon from "@material-ui/core/Icon";
-import List from "@mui/material/List";
 
 const CategoryList = styled(List)`
   width: 100%;
   background-color: #f2f9f6;
+  padding: 0px;
 `;
 
 const CategoryListItemButton = styled(ListItemButton)`
@@ -36,17 +35,21 @@ const Categories = () => {
     {
       id: "1",
       icon: "sports_tennis",
-      category: "sport & fritid",
-      path: "/sports",
+      category: "Sport & fritid",
+      path: "Sport & fritid",
     },
-    { id: "2", icon: "build", category: "verktyg", path: "/tools" },
+    { id: "2", icon: "build", category: "Verktyg", path: "Verktyg" },
   ];
 
   return (
     <CategoryList>
       {categories.map((category) => (
         <div key={category.id}>
-          <CategoryListItemButton sx={{ boxShadow: 2 }}>
+          <CategoryListItemButton
+            sx={{ boxShadow: 2 }}
+            component={Link}
+            to={`/${category.path}`}
+          >
             <ListItemAvatar>
               <StyledAvatar>
                 <Icon>{category.icon}</Icon>
