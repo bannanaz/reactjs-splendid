@@ -48,7 +48,7 @@ const Categories = () => {
           <CategoryListItemButton
             sx={{ boxShadow: 2 }}
             component={Link}
-            to={`/${category.path}`}
+            to={`/category/${category.path}`}
           >
             <ListItemAvatar>
               <StyledAvatar>
