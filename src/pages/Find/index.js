@@ -15,26 +15,30 @@ const Find = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <br></br>
       <br></br>
-      <Typography variant="h2">Sök bland kategorier</Typography>
-      <Categories />
+      <section>
+        <Typography variant="h2">Kategorier</Typography>
+        <Categories />
+      </section>
       <br></br>
       <br></br>
-      <Typography variant="h2">Våra nyaste annonser</Typography>
-      <Grid container spacing={3}>
-        {ads
-          .slice(0)
-          .reverse()
-          .map((ad) => (
-            <Grid item key={ad.id} xs={12} sm={6} lg={4}>
-              <AdCard ad={ad} />
-            </Grid>
-          ))}
-      </Grid>
+      <section>
+        <Typography variant="h2">Våra nyaste annonser</Typography>
+        <Grid container spacing={3}>
+          {ads
+            .slice(Math.max(ads.length - 6, 0))
+            .reverse()
+            .map((ad) => (
+              <Grid item key={ad.id} xs={12} sm={6} lg={4}>
+                <AdCard ad={ad} />
+              </Grid>
+            ))}
+        </Grid>
+      </section>
       <Bottomnav />
-    </div>
+    </>
   );
 };
 

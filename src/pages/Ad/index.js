@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import "../../styles/styles.css";
+import { useParams, useHistory } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Box from "@mui/material/Box";
-import { Button, Container, Grid, Typography } from "@material-ui/core";
-import { CardHeaderGlbl, GridSingleCol } from "../../components/DesignElements";
+import { Button, Grid, Link, Typography } from "@material-ui/core";
+import {
+  CardHeaderGlbl,
+  GoBackIcon,
+  GridSingleCol,
+} from "../../components/DesignElements";
 
 const Ad = () => {
   const { id } = useParams();
   const [ads, setAds] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     fetch(`http://localhost:8000/ads/${id}`)
@@ -19,8 +23,13 @@ const Ad = () => {
   }, [id]);
 
   return (
-    <Container>
+    <>
+      <br></br>
+      <Link variant="button" onClick={() => history.goBack()}>
+        <GoBackIcon />
+      </Link>
       <GridSingleCol>
+        <br></br>
         <br></br>
         <Grid item xs={12} sm={9} lg={8} margin="auto">
           <Card elevation={2}>
@@ -52,7 +61,7 @@ const Ad = () => {
         </Box>
         <br></br>
       </GridSingleCol>
-    </Container>
+    </>
   );
 };
 export default Ad;

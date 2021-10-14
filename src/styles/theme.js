@@ -109,6 +109,10 @@ theme.overrides = {
       color: "#FFFFFF",
     },
 
+    iconPrimary: {
+      color: "#5F5F5F",
+    },
+
     textSecondary: {
       fontStyle: "italic",
       textDecoration: "underline",

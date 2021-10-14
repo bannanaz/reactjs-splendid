@@ -1,6 +1,10 @@
 import React from "react";
+import styled from "styled-components";
 import PropTypes from "prop-types";
 import Button from "@mui/material/Button";
+import { Paper } from "@mui/material";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import {
   Card,
   CardHeader,
@@ -8,7 +12,6 @@ import {
   Grid,
   Typography,
 } from "@material-ui/core";
-import { Paper } from "@mui/material";
 
 export const BottomBtn = ({ children, target, rel, href }) => {
   return (
@@ -45,7 +48,14 @@ BottomBtn.propTypes = {
   href: PropTypes.string,
 };
 
-export default BottomBtn;
+export const GoBackIcon = () => {
+  return (
+    <ArrowBackIcon
+      fontSize="medium"
+      sx={{ color: "#818181", cursor: "pointer" }}
+    />
+  );
+};
 
 export const TopnavLogo = ({ children }) => {
   return (
@@ -114,6 +124,7 @@ export const GridSingleCol = ({ children }) => {
   return (
     <Grid
       container
+      component="section"
       spacing={0}
       direction="column"
       alignItems="center"

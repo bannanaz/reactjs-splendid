@@ -88,7 +88,7 @@ const AdUpload = () => {
     <GridSingleCol>
       <Grid item xs={12} sm={9} lg={8} margin="auto">
         <PaperAdUpload>
-          <Typography variant="h2">skapa annons</Typography>
+          <Typography variant="h2">Skapa annons</Typography>
           <form onSubmit={handleSubmit} noValidate autoComplete="off">
             <FormControl
               error={categoryError}
@@ -111,33 +111,39 @@ const AdUpload = () => {
             <TextField
               onChange={(e) => setTitle(e.target.value)}
               label="Rubrik"
+              id="rubrik"
               error={titleError}
             />
             <TextField
               onChange={(e) => setDetails(e.target.value)}
               label="Beskrivning"
+              id="beskrivning"
               error={detailsError}
               multiline
               rows={3}
             />
             <TextField
               onChange={(e) => setImage(e.target.value)}
-              label="Bild, kopiera in länk ex. https://exempelbild.com"
+              label="Bildlänk, ex. https://exempelbild.com"
+              id="bildlänk"
               error={imageError}
             />
             <TextField
               onChange={(e) => setPrice(e.target.value)}
               label="Pris per dag"
+              id="pris"
               error={priceError}
             />
             <TextField
               onChange={(e) => setZip(e.target.value)}
               label="Postnummer"
+              id="postnummer"
               error={zipError}
             />
             <TextField
               onChange={(e) => setEmail(e.target.value)}
               label="Email"
+              id="email"
               error={emailError}
             />
             <br></br>
@@ -152,6 +158,8 @@ const AdUpload = () => {
               publicera
             </Button>
           </form>
+          <br></br>
+          <br></br>
           <br></br>
         </PaperAdUpload>
       </Grid>

@@ -32,7 +32,7 @@ const Topnav = () => {
             <TopnavLogo sx={{ display: { sm: "block" } }}>splendid</TopnavLogo>
           </Link>
           <Box sx={{ flexGrow: 1 }} />
-          <Box>
+          <Box component="nav">
             <Button
               variant="text"
               color="primary"

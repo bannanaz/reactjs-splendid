@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
-import { Grid, Typography, Link } from "@material-ui/core";
+import { useParams } from "react-router-dom";
+import { Grid, Typography } from "@material-ui/core";
 
 import AdCard from "../../components/AdCard";
 import Bottomnav from "../../components/Bottomnav";
-import { GoBackIcon } from "../../components/DesignElements";
 
-const FilteredAds = () => {
+const FilteredAdsByCategory = () => {
   const { category } = useParams();
   const [ads, setAds] = useState([]);
 
@@ -16,14 +15,8 @@ const FilteredAds = () => {
       .then((data) => setAds(data));
   }, [category]);
 
-  const history = useHistory();
-
   return (
-    <section>
-      <br></br>
-      <Link variant="button" onClick={() => history.goBack()}>
-        <GoBackIcon />
-      </Link>
+    <>
       <br></br>
       <br></br>
       <Typography variant="h2">{category}</Typography>
@@ -39,8 +32,8 @@ const FilteredAds = () => {
           ))}
       </Grid>
       <Bottomnav />
-    </section>
+    </>
   );
 };
 
-export default FilteredAds;
+export default FilteredAdsByCategory;
