@@ -62,7 +62,7 @@ const AdUpload = () => {
       setZipError(true);
     }
 
-    if (email === "") {
+    if (email === "" || email.validity.typeMismatch) {
       setEmailError(true);
     }
 
@@ -89,7 +89,7 @@ const AdUpload = () => {
       <Grid item xs={12} sm={9} lg={8} margin="auto">
         <PaperAdUpload>
           <Typography variant="h2">Skapa annons</Typography>
-          <form onSubmit={handleSubmit} noValidate autoComplete="off">
+          <form onSubmit={handleSubmit} autoComplete="off">
             <FormControl
               error={categoryError}
               required
@@ -136,14 +136,16 @@ const AdUpload = () => {
             />
             <TextField
               onChange={(e) => setZip(e.target.value)}
-              label="Postnummer"
+              label="Postnummer, 5 siffror"
               id="postnummer"
+              inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
               error={zipError}
             />
             <TextField
               onChange={(e) => setEmail(e.target.value)}
               label="Email"
               id="email"
+              type="email"
               error={emailError}
             />
             <br></br>

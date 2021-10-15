@@ -25,7 +25,7 @@ const Find = () => {
       <br></br>
       <br></br>
       <section>
-        <Typography variant="h2">Våra nyaste annonser</Typography>
+        <Typography variant="h2">Nya annonser</Typography>
         <Grid container spacing={3}>
           {ads
             .slice(Math.max(ads.length - 6, 0))

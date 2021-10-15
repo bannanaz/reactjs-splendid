@@ -34,6 +34,7 @@ const theme = createTheme({
     },
     h2: {
       fontSize: 18,
+      textDecoration: "underline",
       marginBottom: 20,
       fontWeight: 600,
       color: "#09806d",

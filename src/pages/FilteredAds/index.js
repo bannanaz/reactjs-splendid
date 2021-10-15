@@ -1,14 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
+import { makeStyles } from "@material-ui/core";
 import { Grid, Typography, Link } from "@material-ui/core";
+import BuildIcon from "@mui/icons-material/Build";
+import SportsTennisIcon from "@mui/icons-material/SportsTennis";
 
 import AdCard from "../../components/AdCard";
 import Bottomnav from "../../components/Bottomnav";
 import { GoBackIcon } from "../../components/DesignElements";
 
+const useStyles = makeStyles((theme) => ({
+  icon: {
+    color: "#09806d",
+    margin: "0px 7px 0px 0px",
+    verticalAlign: "sub",
+  },
+}));
+
 const FilteredAds = () => {
   const { category } = useParams();
   const [ads, setAds] = useState([]);
+  const classes = useStyles();
 
   useEffect(() => {
     fetch(`http://localhost:8000/ads`)
@@ -26,7 +38,15 @@ const FilteredAds = () => {
       </Link>
       <br></br>
       <br></br>
-      <Typography variant="h2">{category}</Typography>
+      <Typography variant="h2">
+        {" "}
+        {category === "Verktyg" ? (
+          <BuildIcon className={classes.icon} />
+        ) : (
+          <SportsTennisIcon className={classes.icon} />
+        )}
+        {category}
+      </Typography>
       <Grid container spacing={3}>
         {ads
           .filter((item) => item.category === category)
