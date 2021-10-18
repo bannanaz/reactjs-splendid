@@ -79,6 +79,46 @@
       "zip": "14171",
       "email": "example@gmail.com",
       "id": 8
+    },
+    {
+      "category": "Sport & fritid",
+      "title": "ggg",
+      "details": "ggg",
+      "image": "gggfjkajfadsö",
+      "price": "120",
+      "zip": "12344",
+      "email": "ggg@gmail.com",
+      "id": 9
+    },
+    {
+      "category": "Verktyg",
+      "title": "hej",
+      "details": "hej",
+      "image": "hej",
+      "price": "120",
+      "zip": "13330",
+      "email": "hej",
+      "id": 10
+    },
+    {
+      "category": "Verktyg",
+      "title": "hej",
+      "details": "hej",
+      "image": "hej",
+      "price": "100",
+      "zip": "12333",
+      "email": "ab",
+      "id": 11
+    },
+    {
+      "category": "Verktyg",
+      "title": "hej",
+      "details": "hghghgh",
+      "image": "jghjhjhjhj",
+      "price": "188",
+      "zip": "12344",
+      "email": "anlepet@gmail.com",
+      "id": 12
     }
   ]
 }

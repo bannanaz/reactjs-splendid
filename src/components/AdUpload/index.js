@@ -30,6 +30,10 @@ const AdUpload = () => {
   const [zipError, setZipError] = useState(false);
   const [emailError, setEmailError] = useState(false);
 
+  const checkEmail = (email) => {
+    return /\S+@\S+\.\S+/.test(email);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setCategoryError(false);
@@ -54,20 +58,30 @@ const AdUpload = () => {
       setImageError(true);
     }
 
-    if (price === "") {
+    if (price === "" || isNaN(price)) {
       setPriceError(true);
     }
 
-    if (zip === "") {
+    if (zip === "" || isNaN(zip) || zip.length !== 5) {
       setZipError(true);
     }
 
-    if (email === "" || email.validity.typeMismatch) {
+    if (checkEmail(email) === false) {
       setEmailError(true);
     }
 
-    if (category && title && details && image && price && zip && email) {
-      console.log(category, title, details, price, zip, email);
+    if (
+      category &&
+      title &&
+      details &&
+      image &&
+      checkEmail(email) === true &&
+      price &&
+      !isNaN(price) &&
+      zip &&
+      !isNaN(zip) &&
+      zip.length === 5
+    ) {
       fetch("http://localhost:8000/ads", {
         method: "POST",
         headers: { "Content-type": "application/json" },
@@ -89,7 +103,7 @@ const AdUpload = () => {
       <Grid item xs={12} sm={9} lg={8} margin="auto">
         <PaperAdUpload>
           <Typography variant="h2">Skapa annons</Typography>
-          <form onSubmit={handleSubmit} autoComplete="off">
+          <form onSubmit={handleSubmit} autoComplete="off" novalidate>
             <FormControl
               error={categoryError}
               required
@@ -132,19 +146,21 @@ const AdUpload = () => {
               onChange={(e) => setPrice(e.target.value)}
               label="Pris per dag"
               id="pris"
+              inputProps={{ inputMode: "numeric" }}
               error={priceError}
             />
             <TextField
               onChange={(e) => setZip(e.target.value)}
               label="Postnummer, 5 siffror"
               id="postnummer"
-              inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
+              inputProps={{ inputMode: "numeric", pattern: "[0-5]*" }}
               error={zipError}
             />
             <TextField
               onChange={(e) => setEmail(e.target.value)}
               label="Email"
               id="email"
+              name="email"
               type="email"
               error={emailError}
             />
