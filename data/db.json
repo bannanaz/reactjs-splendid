@@ -102,23 +102,36 @@
     },
     {
       "category": "Verktyg",
-      "title": "hej",
-      "details": "hej",
-      "image": "hej",
-      "price": "100",
-      "zip": "12333",
-      "email": "ab",
+      "title": "hj",
+      "details": "hsadj",
+      "image": "xzxx",
+      "price": "120",
+      "zip": "14171",
+      "city": "",
+      "email": "example@gmail.com",
       "id": 11
     },
     {
       "category": "Verktyg",
-      "title": "hej",
-      "details": "hghghgh",
-      "image": "jghjhjhjhj",
-      "price": "188",
-      "zip": "12344",
-      "email": "anlepet@gmail.com",
+      "title": "anna",
+      "details": "hello",
+      "image": "hello",
+      "price": "200",
+      "zip": "14171",
+      "city": "Segeltorp",
+      "email": "anna@gmail.com",
       "id": 12
+    },
+    {
+      "category": "Verktyg",
+      "title": "hej",
+      "details": "hej",
+      "image": "hej",
+      "price": "200",
+      "zip": "11767",
+      "city": "Stockholm",
+      "email": "example@gmail.com",
+      "id": 13
     }
   ]
 }

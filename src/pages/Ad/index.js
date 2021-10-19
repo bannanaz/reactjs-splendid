@@ -36,7 +36,7 @@ const Ad = () => {
             <CardMedia component="img" image={ads.image} alt={ads.title} />
             <CardHeaderGlbl
               title={ads.title}
-              subheader={ads.price + " kr/dag, " + ads.zip}
+              subheader={ads.price + " kr/dag, " + ads.city}
             />
             <CardContent>
               <Typography variant="body1">{ads.details}</Typography>

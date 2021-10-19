@@ -15,6 +15,7 @@ import { GridSingleCol, PaperAdUpload } from "../DesignElements";
 
 const AdUpload = () => {
   const history = useHistory();
+  const [city, setCity] = useState("");
   const [category, setCategory] = useState("");
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
@@ -62,7 +63,7 @@ const AdUpload = () => {
       setPriceError(true);
     }
 
-    if (zip === "" || isNaN(zip) || zip.length !== 5) {
+    if (zip === isNaN(zip) || zip.length !== 5) {
       setZipError(true);
     }
 
@@ -70,15 +71,23 @@ const AdUpload = () => {
       setEmailError(true);
     }
 
+    if (zip === !isNaN(zip) || zip.length === 5) {
+      fetch(
+        `https://api.papapi.se/lite/?query=${zip}&format=json&apikey=0de19fcae3d87fe22a055879126efb9a10fadc15`
+      )
+        .then((res) => res.json())
+        .then((data) => setCity(data.results[0].city));
+    }
+
     if (
       category &&
       title &&
       details &&
       image &&
+      city &&
       checkEmail(email) === true &&
       price &&
       !isNaN(price) &&
-      zip &&
       !isNaN(zip) &&
       zip.length === 5
     ) {
@@ -92,6 +101,7 @@ const AdUpload = () => {
           image,
           price,
           zip,
+          city,
           email,
         }),
       }).then(() => history.push("./"));
@@ -103,7 +113,7 @@ const AdUpload = () => {
       <Grid item xs={12} sm={9} lg={8} margin="auto">
         <PaperAdUpload>
           <Typography variant="h2">Skapa annons</Typography>
-          <form onSubmit={handleSubmit} autoComplete="off" novalidate>
+          <form onSubmit={handleSubmit} autoComplete="off" noValidate>
             <FormControl
               error={categoryError}
               required
@@ -153,7 +163,6 @@ const AdUpload = () => {
               onChange={(e) => setZip(e.target.value)}
               label="Postnummer, 5 siffror"
               id="postnummer"
-              inputProps={{ inputMode: "numeric", pattern: "[0-5]*" }}
               error={zipError}
             />
             <TextField

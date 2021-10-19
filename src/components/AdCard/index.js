@@ -9,7 +9,7 @@ const AdCard = ({ ad }) => {
     <SmallCard>
       <CardHeaderGlbl
         title={ad.title}
-        subheader={ad.price + " kr/dag, " + ad.zip}
+        subheader={ad.price + " kr/dag, " + ad.city}
       />
       <CardActionArea component={Link} to={`/ad/${ad.id}`}>
         <SmallCardMedia image={ad.image} title={ad.title} alt={ad.title} />
