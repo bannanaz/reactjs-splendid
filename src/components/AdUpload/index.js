@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import {
   Button,
@@ -16,6 +16,7 @@ import { GridSingleCol, PaperAdUpload } from "../DesignElements";
 const AdUpload = () => {
   const history = useHistory();
   const [city, setCity] = useState("");
+  const didMount = React.useRef(false);
   const [category, setCategory] = useState("");
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
@@ -33,6 +34,47 @@ const AdUpload = () => {
 
   const checkEmail = (email) => {
     return /\S+@\S+\.\S+/.test(email);
+  };
+
+  const handleChange = (event) => {
+    let value = event.target.value;
+    console.log(value);
+    if (value.length === 5 && !isNaN(value)) {
+      setZip(value);
+    }
+  };
+
+  useEffect(() => {
+    if (didMount.current) {
+      fetch(
+        `https://api.papapi.se/lite/?query=${zip}&format=json&apikey=0de19fcae3d87fe22a055879126efb9a10fadc15`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(zip);
+          console.log(data.results[0].city);
+          setCity(data.results[0].city);
+        });
+    } else {
+      didMount.current = true;
+    }
+  }, [zip]);
+
+  const fetchHandling = () => {
+    fetch("http://localhost:8000/ads", {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        category,
+        title,
+        details,
+        image,
+        price,
+        zip,
+        city,
+        email,
+      }),
+    }).then(() => history.push("./find"));
   };
 
   const handleSubmit = (e) => {
@@ -71,40 +113,17 @@ const AdUpload = () => {
       setEmailError(true);
     }
 
-    if (zip === !isNaN(zip) || zip.length === 5) {
-      fetch(
-        `https://api.papapi.se/lite/?query=${zip}&format=json&apikey=0de19fcae3d87fe22a055879126efb9a10fadc15`
-      )
-        .then((res) => res.json())
-        .then((data) => setCity(data.results[0].city));
-    }
-
     if (
       category &&
       title &&
       details &&
       image &&
-      city &&
       checkEmail(email) === true &&
       price &&
       !isNaN(price) &&
-      !isNaN(zip) &&
-      zip.length === 5
+      zip
     ) {
-      fetch("http://localhost:8000/ads", {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify({
-          category,
-          title,
-          details,
-          image,
-          price,
-          zip,
-          city,
-          email,
-        }),
-      }).then(() => history.push("./"));
+      fetchHandling();
     }
   };
 
@@ -160,7 +179,7 @@ const AdUpload = () => {
               error={priceError}
             />
             <TextField
-              onChange={(e) => setZip(e.target.value)}
+              onChange={handleChange}
               label="Postnummer, 5 siffror"
               id="postnummer"
               error={zipError}
@@ -178,7 +197,6 @@ const AdUpload = () => {
             <Button
               variant="contained"
               color="primary"
-              onClick={handleSubmit}
               type="submit"
               endIcon={<KeyboardArrowRightIcon />}
             >

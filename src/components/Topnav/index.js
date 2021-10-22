@@ -29,7 +29,7 @@ const Topnav = () => {
       <AppBar position="static">
         <Toolbar className={classes.toolbar}>
           <Link className={classes.link} to={ROUTES.HOME}>
-            <TopnavLogo sx={{ display: { sm: "block" } }}>splendid</TopnavLogo>
+            <TopnavLogo sx={{ display: { sm: "block" } }}>Splendid</TopnavLogo>
           </Link>
           <Box sx={{ flexGrow: 1 }} />
           <Box component="nav">
@@ -40,7 +40,7 @@ const Topnav = () => {
               to={ROUTES.FIND}
               startIcon={<SearchIcon />}
             >
-              sök pryl
+              Hitta pryl
             </Button>
             <Button
               variant="text"
@@ -49,7 +49,7 @@ const Topnav = () => {
               to={ROUTES.CREATE}
               startIcon={<AddCircleOutlineIcon />}
             >
-              skapa annons
+              Skapa annons
             </Button>
           </Box>
         </Toolbar>

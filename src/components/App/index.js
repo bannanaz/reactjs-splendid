@@ -11,6 +11,7 @@ import Ad from "../../pages/Ad";
 import Find from "../../pages/Find";
 import Home from "../../pages/Home";
 import Create from "../../pages/Create";
+import Request from "../../pages/Request";
 import FilteredAds from "../../pages/FilteredAds";
 
 import * as ROUTES from "../../constants/routes";
@@ -38,6 +39,7 @@ const App = () => {
               <Route exact path={ROUTES.HOME} component={Home} />
               <Route exact path={ROUTES.FIND} component={Find} />
               <Route exact path={ROUTES.CREATE} component={Create} />
+              <Route exact path={ROUTES.REQUEST} component={Request} />
               <Route exact path="/ad/:id" component={Ad} />
               <Route exact path="/category/:category" component={FilteredAds} />
             </Container>

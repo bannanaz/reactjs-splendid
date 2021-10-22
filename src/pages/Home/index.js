@@ -18,6 +18,12 @@ const Find = () => {
     <>
       <br></br>
       <br></br>
+      <Typography variant="h2">Välkommen till Splendid!</Typography>
+      <p>
+        Om du vill hyra saker istället för att köpa så har du kommit rätt. Du
+        kan även hyra ut dina saker till andra – tryggt och säkert!
+      </p>
+      <br></br>
       <section>
         <Typography variant="h2">Kategorier</Typography>
         <Categories />

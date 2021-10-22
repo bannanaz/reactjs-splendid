@@ -53,22 +53,12 @@
     {
       "category": "Sport & fritid",
       "title": "Tält för två personer",
-      "details": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
       "image": "https://images.unsplash.com/photo-1562306382-bd835cde5ad5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2940&q=80",
       "price": "400",
       "zip": "11237",
       "email": "example@gmail.com",
       "id": 6
-    },
-    {
-      "category": "Sport & fritid",
-      "title": "Annas SUP",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
-      "image": "https://images.unsplash.com/photo-1504497046736-6ef4df270f4f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2940&q=80",
-      "price": "500",
-      "zip": "11767",
-      "email": "anlepet@gmail.com",
-      "id": 7
     },
     {
       "category": "Verktyg",
@@ -82,56 +72,14 @@
     },
     {
       "category": "Sport & fritid",
-      "title": "ggg",
-      "details": "ggg",
-      "image": "gggfjkajfadsö",
-      "price": "120",
-      "zip": "12344",
-      "email": "ggg@gmail.com",
-      "id": 9
-    },
-    {
-      "category": "Verktyg",
-      "title": "hej",
+      "title": "cykel",
       "details": "hej",
-      "image": "hej",
+      "image": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1770&q=80",
       "price": "120",
-      "zip": "13330",
-      "email": "hej",
-      "id": 10
-    },
-    {
-      "category": "Verktyg",
-      "title": "hj",
-      "details": "hsadj",
-      "image": "xzxx",
-      "price": "120",
-      "zip": "14171",
-      "city": "",
-      "email": "example@gmail.com",
-      "id": 11
-    },
-    {
-      "category": "Verktyg",
-      "title": "anna",
-      "details": "hello",
-      "image": "hello",
-      "price": "200",
       "zip": "14171",
       "city": "Segeltorp",
-      "email": "anna@gmail.com",
-      "id": 12
-    },
-    {
-      "category": "Verktyg",
-      "title": "hej",
-      "details": "hej",
-      "image": "hej",
-      "price": "200",
-      "zip": "11767",
-      "city": "Stockholm",
       "email": "example@gmail.com",
-      "id": 13
+      "id": 9
     }
   ]
 }

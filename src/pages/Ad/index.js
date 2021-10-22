@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import * as ROUTES from "../../constants/routes";
+import { Link } from "react-router-dom";
 import { useParams, useHistory } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Box from "@mui/material/Box";
-import { Button, Grid, Link, Typography } from "@material-ui/core";
+import { Button, Grid, Typography } from "@material-ui/core";
 import {
   CardHeaderGlbl,
   GoBackIcon,
@@ -30,7 +32,6 @@ const Ad = () => {
       </Link>
       <GridSingleCol>
         <br></br>
-        <br></br>
         <Grid item xs={12} sm={9} lg={8} margin="auto">
           <Card elevation={2}>
             <CardMedia component="img" image={ads.image} alt={ads.title} />
@@ -52,11 +53,10 @@ const Ad = () => {
           <Button
             variant="contained"
             color="primary"
-            target="_top"
-            rel="noopener noreferrer"
-            href={`mailto:${ads.email}`}
+            component={Link}
+            to={ROUTES.REQUEST}
           >
-            gör en förfrågan
+            Gör en förfrågan
           </Button>
         </Box>
         <br></br>
