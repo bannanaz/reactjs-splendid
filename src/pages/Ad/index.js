@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import * as ROUTES from "../../constants/routes";
-import { Link } from "react-router-dom";
 import { useParams, useHistory } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Box from "@mui/material/Box";
-import { Button, Grid, Typography } from "@material-ui/core";
+import { Button, Grid, Typography, Link } from "@material-ui/core";
 import {
   CardHeaderGlbl,
   GoBackIcon,
@@ -51,10 +50,9 @@ const Ad = () => {
         <br></br>
         <Box display="flex" justifyContent="center">
           <Button
+            onClick={() => history.push("/request")}
             variant="contained"
             color="primary"
-            component={Link}
-            to={ROUTES.REQUEST}
           >
             Gör en förfrågan
           </Button>
