@@ -50,7 +50,7 @@ const Ad = () => {
         <br></br>
         <Box display="flex" justifyContent="center">
           <Button
-            onClick={() => history.push("/request")}
+            onClick={() => history.push({ pathname: "/request" })}
             variant="contained"
             color="primary"
           >
