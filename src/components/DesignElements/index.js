@@ -1,17 +1,10 @@
 import React from "react";
-import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 import Button from "@mui/material/Button";
-import { Paper } from "@mui/material";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import { Container, Link, Paper } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import {
-  Card,
-  CardHeader,
-  CardMedia,
-  Grid,
-  Typography,
-} from "@material-ui/core";
+import { Card, CardHeader, CardMedia, Typography } from "@material-ui/core";
 
 export const BottomBtn = ({ children, target, rel, href }) => {
   return (
@@ -120,18 +113,41 @@ SmallCardMedia.propTypes = {
   alt: PropTypes.string,
 };
 
-export const GridSingleCol = ({ children }) => {
+export const MainContainerCenter = ({ children }) => {
   return (
-    <Grid
-      container
+    <Container
       component="section"
-      spacing={0}
-      direction="column"
-      alignItems="center"
-      justifyContent="center"
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        width: { xs: "100%", md: "75%", lg: "65%", xl: "60%" },
+      }}
     >
       {children}
-    </Grid>
+    </Container>
+  );
+};
+
+export const GoBack = () => {
+  const history = useHistory();
+  return (
+    <Container
+      component="nav"
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flexStart",
+        width: { xs: "100%", md: "75%", lg: "65%", xl: "60%" },
+      }}
+    >
+      <Link variant="button" onClick={() => history.goBack()}>
+        <ArrowBackIcon
+          fontSize="medium"
+          sx={{ color: "#818181", cursor: "pointer" }}
+        />
+      </Link>
+    </Container>
   );
 };
 

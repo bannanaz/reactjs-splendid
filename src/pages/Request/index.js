@@ -1,19 +1,37 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-import TextField from "@mui/material/TextField";
-import AdapterMoment from "@mui/lab/AdapterMoment";
+import styled from "styled-components";
 import moment from "moment";
 import "moment/locale/sv";
 
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import Box from "@mui/material/Box";
-import { Button, Grid, Link, Typography } from "@material-ui/core";
-import { GoBackIcon, GridSingleCol } from "../../components/DesignElements";
 import Stack from "@mui/material/Stack";
+import TextField from "@mui/material/TextField";
+import AdapterMoment from "@mui/lab/AdapterMoment";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import { Button } from "@material-ui/core";
+import { Paper } from "@mui/material";
 import MobileDateRangePicker from "@mui/lab/MobileDateRangePicker";
+import { GoBack, MainContainerCenter } from "../../components/DesignElements";
+
+const StyledDivContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 420px;
+  min-width: 300px;
+  margin: auto;
+`;
+
+const StyledDivContainer2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 420px;
+  min-width: 300px;
+  margin: auto;
+`;
 
 const Request = (props) => {
-  const history = useHistory();
   const [ad, setAd] = useState("");
   const [value, setValue] = useState([null, null]);
   const [startValue, setStartValue] = useState("");
@@ -60,14 +78,12 @@ const Request = (props) => {
 
   return (
     <>
-      <LocalizationProvider dateAdapter={AdapterMoment}>
-        <br></br>
-        <Link variant="button" onClick={() => history.goBack()}>
-          <GoBackIcon />
-        </Link>
-        <GridSingleCol>
-          <br></br>
-          <Grid item xs={12} sm={9} lg={8} margin="auto">
+      <br></br>
+      <GoBack />
+      <br></br>
+      <MainContainerCenter>
+        <Paper sx={{ width: "100%" }}>
+          <StyledDivContainer>
             <p>{ad.title}</p>
             <p>Välj tidsperiod att hyra:</p>
             <br></br>
@@ -75,7 +91,8 @@ const Request = (props) => {
               <Stack spacing={3}>
                 <MobileDateRangePicker
                   startText="Hyrstart"
-                  endText="Återlämning"
+                  endText="Återlämna"
+                  mask=""
                   value={value}
                   onChange={handleChange}
                   renderInput={(startProps, endProps) => (
@@ -88,9 +105,13 @@ const Request = (props) => {
                 />
               </Stack>
             </LocalizationProvider>
+          </StyledDivContainer>
+          <StyledDivContainer2>
             <br></br>
-            {startValue !== "" ? <p>Hyrstart: {startValue}</p> : ""}
-            {endValue !== "" ? <p>Återlämning: {endValue}</p> : ""}
+            <p>
+              Hyrstart: {startValue !== "" ? <span>{startValue}</span> : ""}
+            </p>
+            <p>Återlämna: {endValue !== "" ? <span>{endValue}</span> : ""}</p>
             {duration !== "" ? <p>Antal dagar: {duration}</p> : ""}
             {duration !== "" ? (
               <p>
@@ -100,21 +121,23 @@ const Request = (props) => {
             ) : (
               ""
             )}
-          </Grid>
-          <br></br>
-          <Box display="flex" justifyContent="center">
-            <Button
-              variant="contained"
-              color="primary"
-              target="_top"
-              rel="noopener noreferrer"
-            >
-              Skicka din förfrågan
-            </Button>
-          </Box>
-          <br></br>
-        </GridSingleCol>
-      </LocalizationProvider>
+            <br></br>
+          </StyledDivContainer2>
+        </Paper>
+        <br></br>
+        <br></br>
+        <Button
+          variant="contained"
+          color="primary"
+          target="_top"
+          rel="noopener noreferrer"
+        >
+          Skicka din förfrågan
+        </Button>
+        <br></br>
+        <br></br>
+        <br></br>
+      </MainContainerCenter>
     </>
   );
 };

@@ -8,10 +8,9 @@ import {
   InputLabel,
   MenuItem,
   Typography,
-  Grid,
 } from "@material-ui/core";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { GridSingleCol, PaperAdUpload } from "../DesignElements";
+import { PaperAdUpload } from "../DesignElements";
 
 const AdUpload = () => {
   const history = useHistory();
@@ -128,87 +127,85 @@ const AdUpload = () => {
   };
 
   return (
-    <GridSingleCol>
-      <Grid item xs={12} sm={9} lg={8} margin="auto">
-        <PaperAdUpload>
-          <Typography variant="h2">Skapa annons</Typography>
-          <form onSubmit={handleSubmit} autoComplete="off" noValidate>
-            <FormControl
-              error={categoryError}
-              required
-              variant="filled"
-              margin="normal"
-              sx={{ m: 1, minWidth: 120 }}
+    <>
+      <PaperAdUpload>
+        <Typography variant="h2">Skapa annons</Typography>
+        <form onSubmit={handleSubmit} autoComplete="off" noValidate>
+          <FormControl
+            error={categoryError}
+            required
+            variant="filled"
+            margin="normal"
+            sx={{ m: 1, minWidth: 120 }}
+          >
+            <InputLabel id="select-filled-label">Välj kategori:</InputLabel>
+            <Select
+              labelId="select-filled-label"
+              id="select-filled"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
             >
-              <InputLabel id="select-filled-label">Välj kategori:</InputLabel>
-              <Select
-                labelId="select-filled-label"
-                id="select-filled"
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-              >
-                <MenuItem value={"Sport & fritid"}>Sport &amp; fritid</MenuItem>
-                <MenuItem value={"Verktyg"}>Verktyg</MenuItem>
-              </Select>
-            </FormControl>
-            <TextField
-              onChange={(e) => setTitle(e.target.value)}
-              label="Rubrik"
-              id="rubrik"
-              error={titleError}
-            />
-            <TextField
-              onChange={(e) => setDetails(e.target.value)}
-              label="Beskrivning"
-              id="beskrivning"
-              error={detailsError}
-              multiline
-              rows={3}
-            />
-            <TextField
-              onChange={(e) => setImage(e.target.value)}
-              label="Bildlänk, ex. https://exempelbild.com"
-              id="bildlänk"
-              error={imageError}
-            />
-            <TextField
-              onChange={(e) => setPrice(e.target.value)}
-              label="Pris per dag"
-              id="pris"
-              inputProps={{ inputMode: "numeric" }}
-              error={priceError}
-            />
-            <TextField
-              onChange={handleChange}
-              label="Postnummer, 5 siffror"
-              id="postnummer"
-              error={zipError}
-            />
-            <TextField
-              onChange={(e) => setEmail(e.target.value)}
-              label="Email"
-              id="email"
-              name="email"
-              type="email"
-              error={emailError}
-            />
-            <br></br>
-            <br></br>
-            <Button
-              variant="contained"
-              color="primary"
-              type="submit"
-              endIcon={<KeyboardArrowRightIcon />}
-            >
-              publicera
-            </Button>
-          </form>
+              <MenuItem value={"Sport & fritid"}>Sport &amp; fritid</MenuItem>
+              <MenuItem value={"Verktyg"}>Verktyg</MenuItem>
+            </Select>
+          </FormControl>
+          <TextField
+            onChange={(e) => setTitle(e.target.value)}
+            label="Rubrik"
+            id="rubrik"
+            error={titleError}
+          />
+          <TextField
+            onChange={(e) => setDetails(e.target.value)}
+            label="Beskrivning"
+            id="beskrivning"
+            error={detailsError}
+            multiline
+            rows={3}
+          />
+          <TextField
+            onChange={(e) => setImage(e.target.value)}
+            label="Bildlänk, ex. https://exempelbild.com"
+            id="bildlänk"
+            error={imageError}
+          />
+          <TextField
+            onChange={(e) => setPrice(e.target.value)}
+            label="Pris per dag"
+            id="pris"
+            inputProps={{ inputMode: "numeric" }}
+            error={priceError}
+          />
+          <TextField
+            onChange={handleChange}
+            label="Postnummer, 5 siffror"
+            id="postnummer"
+            error={zipError}
+          />
+          <TextField
+            onChange={(e) => setEmail(e.target.value)}
+            label="Email"
+            id="email"
+            name="email"
+            type="email"
+            error={emailError}
+          />
           <br></br>
           <br></br>
-          <br></br>
-        </PaperAdUpload>
-      </Grid>
-    </GridSingleCol>
+          <Button
+            variant="contained"
+            color="primary"
+            type="submit"
+            endIcon={<KeyboardArrowRightIcon />}
+          >
+            publicera
+          </Button>
+        </form>
+        <br></br>
+        <br></br>
+        <br></br>
+      </PaperAdUpload>
+    </>
   );
 };
 
