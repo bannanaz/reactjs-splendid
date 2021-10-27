@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import * as ROUTES from "../../constants/routes";
+import { useLocation } from "react-router-dom";
 import { useParams, useHistory } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -50,7 +50,11 @@ const Ad = () => {
         <br></br>
         <Box display="flex" justifyContent="center">
           <Button
-            onClick={() => history.push({ pathname: "/request" })}
+            onClick={() =>
+              history.push({
+                pathname: "/ad/" + id + "/request",
+              })
+            }
             variant="contained"
             color="primary"
           >

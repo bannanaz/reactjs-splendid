@@ -39,8 +39,8 @@ const App = () => {
               <Route exact path={ROUTES.HOME} component={Home} />
               <Route exact path={ROUTES.FIND} component={Find} />
               <Route exact path={ROUTES.CREATE} component={Create} />
-              <Route exact path={ROUTES.REQUEST} component={Request} />
               <Route exact path="/ad/:id" component={Ad} />
+              <Route exact path="/ad/:id/request" component={Request} />
               <Route exact path="/category/:category" component={FilteredAds} />
             </Container>
           </main>

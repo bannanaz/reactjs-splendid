@@ -12,8 +12,9 @@ import { GoBackIcon, GridSingleCol } from "../../components/DesignElements";
 import Stack from "@mui/material/Stack";
 import MobileDateRangePicker from "@mui/lab/MobileDateRangePicker";
 
-const Request = () => {
+const Request = (props) => {
   const history = useHistory();
+  const [ad, setAd] = useState("");
   const [value, setValue] = useState([null, null]);
   const [startValue, setStartValue] = useState("");
   const [endValue, setEndValue] = useState("");
@@ -23,6 +24,12 @@ const Request = () => {
   const handleChange = (newValue) => {
     setValue(newValue);
   };
+
+  useEffect(() => {
+    fetch(`http://localhost:8000/ads/${props.match.params.id}`)
+      .then((res) => res.json())
+      .then((data) => setAd(data));
+  }, [props.match.params.id]);
 
   useEffect(() => {
     if (didMount.current) {
@@ -51,9 +58,6 @@ const Request = () => {
     }
   }, [value]);
 
-  console.log(startValue);
-  console.log(endValue);
-
   return (
     <>
       <LocalizationProvider dateAdapter={AdapterMoment}>
@@ -64,7 +68,8 @@ const Request = () => {
         <GridSingleCol>
           <br></br>
           <Grid item xs={12} sm={9} lg={8} margin="auto">
-            <p>Välj tidsperiod att hyra</p>
+            <p>{ad.title}</p>
+            <p>Välj tidsperiod att hyra:</p>
             <br></br>
             <LocalizationProvider dateAdapter={AdapterMoment}>
               <Stack spacing={3}>
@@ -87,8 +92,11 @@ const Request = () => {
             {startValue !== "" ? <p>Hyrstart: {startValue}</p> : ""}
             {endValue !== "" ? <p>Återlämning: {endValue}</p> : ""}
             {duration !== "" ? <p>Antal dagar: {duration}</p> : ""}
-            {endValue && startValue !== "" ? (
-              <p>Pris (inklusive 50 kr i bokningsavgift):</p>
+            {duration !== "" ? (
+              <p>
+                Pris (inklusive 50 kr i bokningsavgift):{" "}
+                {duration * ad.price + 50} kr
+              </p>
             ) : (
               ""
             )}
