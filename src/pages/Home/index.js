@@ -1,51 +1,79 @@
 import React, { useEffect, useState } from "react";
-import { Grid, Typography } from "@material-ui/core";
+import { Button, Grid, Typography } from "@material-ui/core";
+import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 
 import AdCard from "../../components/AdCard";
 import Bottomnav from "../../components/Bottomnav";
 import Categories from "../../components/Categories";
+import { PaperAdUpload } from "../../components/DesignElements";
+import { StayPrimaryLandscape } from "@material-ui/icons";
 
-const Find = () => {
-  const [ads, setAds] = useState([]);
+const StyledDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 
-  useEffect(() => {
-    fetch("http://localhost:8000/ads")
-      .then((res) => res.json())
-      .then((data) => setAds(data));
-  }, []);
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 
+  img {
+    width: 100%;
+  }
+`;
+
+const Home = () => {
+  const history = useHistory();
   return (
     <>
       <br></br>
+      <PaperAdUpload>
+        <StyledDiv>
+          <img
+            src="https://raw.githubusercontent.com/bannanaz/images/main/img/people.png"
+            alt="Människor som utför olika sportaktiviteter"
+          />
+          <br></br>
+          <Typography variant="h5" component="h2">
+            Splendid att du är här!
+          </Typography>
+          <br></br>
+          <Typography variant="body1">
+            Om du vill hyra sportutrustning och andra smarta prylar istället för
+            att köpa så har du kommit rätt. Du kan också hyra ut dina saker till
+            andra – tryggt och säkert!
+          </Typography>
+          <Button
+            variant="contained"
+            color="Secondary"
+            onClick={() =>
+              history.push({
+                pathname: "/find",
+              })
+            }
+          >
+            Börja leta
+          </Button>
+          <Typography variant="h2" component="h3">
+            Logga in
+          </Typography>
+          <Typography variant="h2" component="h3">
+            Skapa konto
+          </Typography>
+        </StyledDiv>
+      </PaperAdUpload>
       <br></br>
-      <Typography variant="h2">Välkommen till Splendid!</Typography>
-      <p>
-        Om du vill hyra saker istället för att köpa så har du kommit rätt. Du
-        kan även hyra ut dina saker till andra – tryggt och säkert!
-      </p>
-      <br></br>
-      <section>
-        <Typography variant="h2">Kategorier</Typography>
-        <Categories />
-      </section>
       <br></br>
       <br></br>
-      <section>
-        <Typography variant="h2">Nya annonser</Typography>
-        <Grid container spacing={3}>
-          {ads
-            .slice(Math.max(ads.length - 6, 0))
-            .reverse()
-            .map((ad) => (
-              <Grid item key={ad.id} xs={12} sm={6} lg={4}>
-                <AdCard ad={ad} />
-              </Grid>
-            ))}
-        </Grid>
-      </section>
+      <br></br>
       <Bottomnav />
     </>
   );
 };
 
-export default Find;
+export default Home;

@@ -1,16 +1,17 @@
+import { blue } from "@material-ui/core/colors";
 import { createTheme } from "@material-ui/core/styles";
 
 const theme = createTheme({
   palette: {
     primary: {
       light: "#F2F9F6",
-      main: "#0a8f7a",
-      dark: "#09806d",
+      main: "#258A70",
+      dark: "#258A70",
       contrastText: "#fff",
     },
     secondary: {
-      main: "#F88472",
-      dark: "#E37969",
+      main: "#d66d5e",
+      dark: "#d66d5e",
       contrastText: "#fff",
     },
 
@@ -37,9 +38,10 @@ const theme = createTheme({
       textDecoration: "underline",
       marginBottom: 20,
       fontWeight: 600,
-      color: "#09806d",
+      color: "#258A70",
       lineHeight: 1.5,
     },
+
     h3: {
       fontSize: 20,
       fontWeight: "500",
@@ -51,6 +53,12 @@ const theme = createTheme({
       fontSize: 16,
       fontWeight: "500",
       color: "#5F5F5F",
+    },
+
+    h5: {
+      fontSize: "2.7rem",
+      fontWeight: "700",
+      color: "#258A70",
     },
 
     subtitle1: {
@@ -101,13 +109,20 @@ theme.overrides = {
       border: "none",
     },
     containedPrimary: {
+      width: 170,
       "&:hover": {
         backgroundColor: "#0B9882",
       },
     },
 
+    containedSecondary: {
+      width: 170,
+      margin: "27px 0px 27px 0px",
+    },
+
     textPrimary: {
       color: "#FFFFFF",
+      marginLeft: "9px",
     },
 
     textSecondary: {

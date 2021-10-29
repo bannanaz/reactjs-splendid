@@ -3,8 +3,9 @@ import { useParams, useHistory } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import { Button, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import {
+  BottomBtn,
   CardHeaderGlbl,
   GoBack,
   MainContainerCenter,
@@ -25,7 +26,6 @@ const Ad = () => {
     <>
       <br></br>
       <GoBack />
-      <br></br>
       <MainContainerCenter>
         <Card elevation={2}>
           <CardMedia component="img" image={ads.image} alt={ads.title} />
@@ -43,20 +43,15 @@ const Ad = () => {
         </Card>
         <br></br>
         <br></br>
-        <Button
+        <BottomBtn
           onClick={() =>
             history.push({
               pathname: "/ad/" + id + "/request",
             })
           }
-          variant="contained"
-          color="primary"
         >
           Gör en förfrågan
-        </Button>
-        <br></br>
-        <br></br>
-        <br></br>
+        </BottomBtn>
       </MainContainerCenter>
     </>
   );

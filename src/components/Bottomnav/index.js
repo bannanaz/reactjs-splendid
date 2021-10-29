@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import SearchIcon from "@mui/icons-material/Search";
+import ExploreIcon from "@mui/icons-material/Explore";
 
 const Bottomnav = () => {
   return (
@@ -20,13 +20,21 @@ const Bottomnav = () => {
         display: { xs: "block", sm: "none" },
       }}
     >
-      <BottomNavigation sx={{ backgroundColor: "#09806d" }} showLabels>
+      <BottomNavigation
+        sx={{
+          backgroundColor: "#258A70",
+          span: {
+            fontFamily: "Poppins",
+          },
+        }}
+        showLabels
+      >
         <BottomNavigationAction
           component={Link}
           to={ROUTES.FIND}
-          label="Sök pryl"
+          label="Hitta pryl"
           value="find"
-          icon={<SearchIcon />}
+          icon={<ExploreIcon />}
         />
         <BottomNavigationAction
           component={Link}

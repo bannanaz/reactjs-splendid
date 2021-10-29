@@ -8,7 +8,7 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import SearchIcon from "@mui/icons-material/Search";
+import ExploreIcon from "@mui/icons-material/Explore";
 import { TopnavLogo } from "../DesignElements";
 
 const useStyles = makeStyles((theme) => ({
@@ -38,7 +38,7 @@ const Topnav = () => {
               color="primary"
               component={Link}
               to={ROUTES.FIND}
-              startIcon={<SearchIcon />}
+              startIcon={<ExploreIcon />}
             >
               Hitta pryl
             </Button>
