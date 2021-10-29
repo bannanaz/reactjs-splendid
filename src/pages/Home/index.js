@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Button, Grid, Typography } from "@material-ui/core";
+import React from "react";
+import { Button, Typography } from "@material-ui/core";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 
-import AdCard from "../../components/AdCard";
 import Bottomnav from "../../components/Bottomnav";
-import Categories from "../../components/Categories";
 import { PaperAdUpload } from "../../components/DesignElements";
-import { StayPrimaryLandscape } from "@material-ui/icons";
 
 const StyledDiv = styled.div`
   display: flex;
@@ -39,7 +36,7 @@ const Home = () => {
             alt="Människor som utför olika sportaktiviteter"
           />
           <br></br>
-          <Typography variant="h5" component="h2">
+          <Typography variant="h5" component="h1">
             Splendid att du är här!
           </Typography>
           <br></br>
@@ -50,7 +47,7 @@ const Home = () => {
           </Typography>
           <Button
             variant="contained"
-            color="Secondary"
+            color="secondary"
             onClick={() =>
               history.push({
                 pathname: "/find",

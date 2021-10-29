@@ -1,4 +1,3 @@
-import { blue } from "@material-ui/core/colors";
 import { createTheme } from "@material-ui/core/styles";
 
 const theme = createTheme({
@@ -30,11 +29,12 @@ const theme = createTheme({
     fontFamily: ["Poppins", "sans-serif"].join(","),
 
     h1: {
-      fontSize: 24,
+      fontSize: "1.7rem",
       fontWeight: 600,
     },
+
     h2: {
-      fontSize: 18,
+      fontSize: "1.2rem",
       textDecoration: "underline",
       marginBottom: 20,
       fontWeight: 600,
@@ -109,7 +109,6 @@ theme.overrides = {
       border: "none",
     },
     containedPrimary: {
-      width: 170,
       "&:hover": {
         backgroundColor: "#0B9882",
       },

@@ -12,9 +12,6 @@ export const BottomBtn = ({ children, target, rel, href }) => {
       type="button"
       variant="conatined"
       size="large"
-      target={target}
-      rel={rel}
-      href={href}
       sx={{
         backgroundColor: "#0a8f7a",
         color: "#FFFFFF",

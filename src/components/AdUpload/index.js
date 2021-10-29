@@ -196,6 +196,7 @@ const AdUpload = () => {
             variant="contained"
             color="primary"
             type="submit"
+            sx={{ width: 170 }}
             endIcon={<KeyboardArrowRightIcon />}
           >
             publicera

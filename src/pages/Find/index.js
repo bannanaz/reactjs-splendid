@@ -37,6 +37,10 @@ const Find = () => {
             ))}
         </Grid>
       </section>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <Bottomnav />
     </>
   );

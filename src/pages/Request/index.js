@@ -126,12 +126,7 @@ const Request = (props) => {
         </Paper>
         <br></br>
         <br></br>
-        <Button
-          variant="contained"
-          color="primary"
-          target="_top"
-          rel="noopener noreferrer"
-        >
+        <Button variant="contained" color="primary">
           Skicka din förfrågan
         </Button>
         <br></br>
