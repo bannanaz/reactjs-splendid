@@ -56,12 +56,12 @@ const Home = () => {
           >
             Börja leta
           </Button>
-          <Typography variant="h2" component="h3">
+          {/*<Typography variant="h6" component="h3">
             Logga in
           </Typography>
-          <Typography variant="h2" component="h3">
+          <Typography variant="h6" component="h3">
             Skapa konto
-          </Typography>
+          </Typography>*/}
         </StyledDiv>
       </PaperAdUpload>
       <br></br>

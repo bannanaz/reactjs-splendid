@@ -8,10 +8,15 @@ import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import AdapterMoment from "@mui/lab/AdapterMoment";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import { Button } from "@material-ui/core";
-import { Paper } from "@mui/material";
+import { Button, Typography } from "@material-ui/core";
 import MobileDateRangePicker from "@mui/lab/MobileDateRangePicker";
-import { GoBack, MainContainerCenter } from "../../components/DesignElements";
+import "../../styles/styles.css";
+import {
+  GoBack,
+  MainContainerCenter,
+  PaperAdUpload,
+} from "../../components/DesignElements";
+import Bottomnav from "../../components/Bottomnav";
 
 const StyledDivContainer = styled.div`
   display: flex;
@@ -25,7 +30,7 @@ const StyledDivContainer = styled.div`
 const StyledDivContainer2 = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   max-width: 420px;
   min-width: 300px;
   margin: auto;
@@ -77,21 +82,19 @@ const Request = (props) => {
   }, [value]);
 
   return (
-    <>
+    <div>
       <br></br>
       <GoBack />
       <br></br>
       <MainContainerCenter>
-        <Paper sx={{ width: "100%" }}>
+        <PaperAdUpload>
           <StyledDivContainer>
-            <p>{ad.title}</p>
-            <p>Välj tidsperiod att hyra:</p>
-            <br></br>
+            <Typography variant="h2">Välj tidsperiod att hyra:</Typography>
             <LocalizationProvider dateAdapter={AdapterMoment}>
               <Stack spacing={3}>
                 <MobileDateRangePicker
-                  startText="Hyrstart"
-                  endText="Återlämna"
+                  startText="Från"
+                  endText="Till"
                   mask=""
                   value={value}
                   onChange={handleChange}
@@ -108,32 +111,40 @@ const Request = (props) => {
           </StyledDivContainer>
           <StyledDivContainer2>
             <br></br>
-            <p>
-              Hyrstart: {startValue !== "" ? <span>{startValue}</span> : ""}
-            </p>
-            <p>Återlämna: {endValue !== "" ? <span>{endValue}</span> : ""}</p>
-            {duration !== "" ? <p>Antal dagar: {duration}</p> : ""}
+            {startValue && endValue !== "" ? (
+              <Typography variant="body2">
+                {startValue} - {endValue}
+              </Typography>
+            ) : (
+              ""
+            )}
             {duration !== "" ? (
-              <p>
-                Pris (inklusive 50 kr i bokningsavgift):{" "}
-                {duration * ad.price + 50} kr
-              </p>
+              <Typography variant="body2">{duration} dagar</Typography>
+            ) : (
+              ""
+            )}
+            {duration !== "" ? (
+              <Typography variant="body2">
+                Pris: {duration * ad.price + 25} kr (inklusive 25 kr i
+                bokningsavgift)
+              </Typography>
             ) : (
               ""
             )}
             <br></br>
           </StyledDivContainer2>
-        </Paper>
+        </PaperAdUpload>
         <br></br>
         <br></br>
         <Button variant="contained" color="primary">
-          Skicka din förfrågan
+          Skicka förfrågan
         </Button>
-        <br></br>
-        <br></br>
-        <br></br>
       </MainContainerCenter>
-    </>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Bottomnav />
+    </div>
   );
 };
 export default Request;

@@ -17,6 +17,7 @@ import FilteredAds from "../../pages/FilteredAds";
 import * as ROUTES from "../../constants/routes";
 import Header from "../Header";
 import Topnav from "../Topnav";
+import Terms from "../../pages/Terms";
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -35,10 +36,11 @@ const App = () => {
           <Header />
           <Topnav />
           <main className={classes.main}>
-            <Container>
+            <Container className={classes.main}>
               <Route exact path={ROUTES.HOME} component={Home} />
               <Route exact path={ROUTES.FIND} component={Find} />
               <Route exact path={ROUTES.CREATE} component={Create} />
+              <Route exact path={ROUTES.TERMS} component={Terms} />
               <Route exact path="/ad/:id" component={Ad} />
               <Route exact path="/ad/:id/request" component={Request} />
               <Route exact path="/category/:category" component={FilteredAds} />

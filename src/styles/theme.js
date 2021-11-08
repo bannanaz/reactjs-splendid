@@ -35,7 +35,6 @@ const theme = createTheme({
 
     h2: {
       fontSize: "1.2rem",
-      textDecoration: "underline",
       marginBottom: 20,
       fontWeight: 600,
       color: "#258A70",
@@ -53,6 +52,7 @@ const theme = createTheme({
       fontSize: 16,
       fontWeight: "500",
       color: "#5F5F5F",
+      lineHeight: 1.3,
     },
 
     h5: {
@@ -61,15 +61,33 @@ const theme = createTheme({
       color: "#258A70",
     },
 
+    h6: {
+      fontSize: "1.2rem",
+      marginBottom: 20,
+      textDecoration: "underline",
+      fontWeight: 600,
+      color: "#258A70",
+      lineHeight: 1.5,
+    },
+
     subtitle1: {
       fontWeight: 500,
       color: "#5F5F5F",
       fontFamily: "Poppins",
+      lineHeight: 1.5,
     },
 
     body1: {
       fontFamily: "Poppins",
       color: "#5F5F5F",
+      lineHeight: 1.5,
+      fontSize: "1rem",
+    },
+    body2: {
+      fontFamily: "Poppins",
+      color: "#5F5F5F",
+      lineHeight: 1.7,
+      fontSize: "1rem",
     },
   },
 });
@@ -109,6 +127,7 @@ theme.overrides = {
       border: "none",
     },
     containedPrimary: {
+      width: 300,
       "&:hover": {
         backgroundColor: "#0B9882",
       },
@@ -149,6 +168,12 @@ theme.overrides = {
       color: "#5F5F5F",
       fontSize: 14,
       width: 200,
+    },
+  },
+  MuiPrivatePickersToolbar: {
+    root: {
+      color: "blue",
+      fontFamily: "Poppins",
     },
   },
 };

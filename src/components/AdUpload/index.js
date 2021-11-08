@@ -21,13 +21,18 @@ const AdUpload = () => {
   const [details, setDetails] = useState("");
   const [image, setImage] = useState("");
   const [price, setPrice] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [zip, setZip] = useState("");
   const [email, setEmail] = useState("");
+
   const [categoryError, setCategoryError] = useState(false);
   const [titleError, setTitleError] = useState(false);
   const [detailsError, setDetailsError] = useState(false);
   const [imageError, setImageError] = useState(false);
   const [priceError, setPriceError] = useState(false);
+  const [nameError, setNameError] = useState(false);
+  const [phoneError, setPhoneError] = useState(false);
   const [zipError, setZipError] = useState(false);
   const [emailError, setEmailError] = useState(false);
 
@@ -35,9 +40,15 @@ const AdUpload = () => {
     return /\S+@\S+\.\S+/.test(email);
   };
 
-  const handleChange = (event) => {
+  const handleChangePhone = (event) => {
     let value = event.target.value;
-    console.log(value);
+    if (/^([+]46)(7[0236])(\d{4})(\d{3})$/.test(value) === true) {
+      setPhone(value);
+    }
+  };
+
+  const handleChangeZip = (event) => {
+    let value = event.target.value;
     if (value.length === 5 && !isNaN(value)) {
       setZip(value);
     }
@@ -69,6 +80,8 @@ const AdUpload = () => {
         details,
         image,
         price,
+        name,
+        phone,
         zip,
         city,
         email,
@@ -83,6 +96,9 @@ const AdUpload = () => {
     setDetailsError(false);
     setPriceError(false);
     setZipError(false);
+    setNameError(false);
+    setPhoneError(false);
+    setEmailError(false);
 
     if (category === "") {
       setCategoryError(true);
@@ -104,6 +120,14 @@ const AdUpload = () => {
       setPriceError(true);
     }
 
+    if (name === "") {
+      setNameError(true);
+    }
+
+    if (phone === "") {
+      setPhoneError(true);
+    }
+
     if (zip === isNaN(zip) || zip.length !== 5) {
       setZipError(true);
     }
@@ -117,6 +141,8 @@ const AdUpload = () => {
       title &&
       details &&
       image &&
+      name &&
+      phone &&
       checkEmail(email) === true &&
       price &&
       !isNaN(price) &&
@@ -165,29 +191,43 @@ const AdUpload = () => {
           />
           <TextField
             onChange={(e) => setImage(e.target.value)}
-            label="Bildlänk, ex. https://exempelbild.com"
+            label="Bildlänk, https://exempelbild.com"
             id="bildlänk"
             error={imageError}
           />
           <TextField
             onChange={(e) => setPrice(e.target.value)}
-            label="Pris per dag"
+            label="Pris per dag i SEK, ex. 100 "
             id="pris"
             inputProps={{ inputMode: "numeric" }}
             error={priceError}
           />
           <TextField
-            onChange={handleChange}
-            label="Postnummer, 5 siffror"
+            onChange={handleChangeZip}
+            label="Postnummer, 14171"
             id="postnummer"
             error={zipError}
           />
+          <br></br>
+          <br></br>
+          <Typography variant="body2">Dina kontaktuppgifter:</Typography>
+          <TextField
+            onChange={(e) => setName(e.target.value)}
+            label="Förnamn"
+            id="namn"
+            error={nameError}
+          />
+          <TextField
+            onChange={handleChangePhone}
+            label="Telefon, +46709301245"
+            id="phone"
+            error={phoneError}
+          />
           <TextField
             onChange={(e) => setEmail(e.target.value)}
-            label="Email"
+            label="Email, exempel@gmail.com"
             id="email"
             name="email"
-            type="email"
             error={emailError}
           />
           <br></br>

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
+import styled from "styled-components";
+
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -9,6 +11,10 @@ import {
   GoBack,
   MainContainerCenter,
 } from "../../components/DesignElements";
+
+const StyledLink = styled(Link)`
+  color: #258a70;
+`;
 
 const Ad = () => {
   const { id } = useParams();
@@ -25,9 +31,15 @@ const Ad = () => {
     <>
       <br></br>
       <GoBack />
+      <br></br>
       <MainContainerCenter>
         <Card elevation={2}>
-          <CardMedia component="img" image={ads.image} alt={ads.title} />
+          <CardMedia
+            component="img"
+            image={ads.image}
+            alt={ads.title}
+            sx={{ mb: "15px" }}
+          />
           <CardHeaderGlbl
             title={ads.title}
             subheader={ads.price + " kr/dag, " + ads.city}
@@ -35,8 +47,33 @@ const Ad = () => {
           <CardContent>
             <Typography variant="body1">{ads.details}</Typography>
             <br></br>
-            <Typography variant="body1">Pris:</Typography>
-            <Typography variant="body1">{ads.price} kr/dag</Typography>
+            <Typography variant="h4">
+              Pris: <span>{ads.price} kr/dag + bokningsvagift 25 kr</span>
+            </Typography>
+            <br></br>
+            <hr></hr>
+            <Typography variant="body2">
+              Plats:
+              <span>
+                {" "}
+                {ads.city}, {ads.zip}
+              </span>
+            </Typography>
+            <Typography variant="body2">
+              Annonsnummer:<span> {ads.id}</span>
+            </Typography>
+            <br></br>
+            <Typography variant="body2">
+              Uthyrare:<span> {ads.name} </span>
+            </Typography>
+            <Typography variant="body2">
+              Email:<span> {ads.email} </span>
+            </Typography>
+            <Typography variant="body2">
+              Tfn:<span> {ads.phone} </span>
+            </Typography>
+            <br></br>
+            <StyledLink to="/terms">Hyresvillkor</StyledLink>
           </CardContent>
           <br></br>
         </Card>

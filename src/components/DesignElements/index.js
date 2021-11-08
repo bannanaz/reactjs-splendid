@@ -78,9 +78,11 @@ export const CardHeaderGlbl = ({ title, subheader }) => {
       subheader={subheader}
       titleTypographyProps={{
         variant: "h3",
+        component: "h2",
       }}
       subheaderTypographyProps={{
         variant: "h4",
+        component: "h3",
         color: "textPrimary",
       }}
     />
@@ -118,6 +120,7 @@ export const MainContainerCenter = ({ children }) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        padding: "0px",
         width: { xs: "100%", md: "75%", lg: "65%", xl: "60%" },
       }}
     >
@@ -135,6 +138,7 @@ export const GoBack = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "flexStart",
+        padding: "0px",
         width: { xs: "100%", md: "75%", lg: "65%", xl: "60%" },
       }}
     >
@@ -149,5 +153,5 @@ export const GoBack = () => {
 };
 
 export const PaperAdUpload = ({ children }) => {
-  return <Paper sx={{ padding: 3 }}>{children}</Paper>;
+  return <Paper sx={{ padding: 3, width: "100%" }}>{children}</Paper>;
 };
