@@ -18,9 +18,10 @@ import * as ROUTES from "../../constants/routes";
 import Header from "../Header";
 import Topnav from "../Topnav";
 import Terms from "../../pages/Terms";
+import Bottomnav from "../Bottomnav";
 
 const useStyles = makeStyles((theme) => ({
-  main: {
+  body: {
     background: "#F2F9F6",
     width: "100%",
   },
@@ -33,10 +34,10 @@ const App = () => {
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
         <Router>
-          <Header />
-          <Topnav />
-          <main className={classes.main}>
-            <Container className={classes.main}>
+          <body className={classes.body}>
+            <Header />
+            <Topnav />
+            <Container>
               <Route exact path={ROUTES.HOME} component={Home} />
               <Route exact path={ROUTES.FIND} component={Find} />
               <Route exact path={ROUTES.CREATE} component={Create} />
@@ -45,7 +46,12 @@ const App = () => {
               <Route exact path="/ad/:id/request" component={Request} />
               <Route exact path="/category/:category" component={FilteredAds} />
             </Container>
-          </main>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <Bottomnav />
+          </body>
         </Router>
       </MuiThemeProvider>
     </>

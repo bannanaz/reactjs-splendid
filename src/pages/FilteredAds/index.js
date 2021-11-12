@@ -6,7 +6,6 @@ import BuildIcon from "@mui/icons-material/Build";
 import SportsTennisIcon from "@mui/icons-material/SportsTennis";
 
 import AdCard from "../../components/AdCard";
-import Bottomnav from "../../components/Bottomnav";
 import { GoBackIcon } from "../../components/DesignElements";
 
 const useStyles = makeStyles((theme) => ({
@@ -58,7 +57,6 @@ const FilteredAds = () => {
             </Grid>
           ))}
       </Grid>
-      <Bottomnav />
     </section>
   );
 };

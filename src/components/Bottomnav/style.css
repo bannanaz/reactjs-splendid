@@ -1,9 +1,5 @@
 .MuiBottomNavigationAction-label {
   color: white;
   font-family: "Poppins", sans-serif;
-  text-transform: lowercase;
-}
-
-.MuiSvgIcon-root {
-  color: white;
+  text-transform: none;
 }

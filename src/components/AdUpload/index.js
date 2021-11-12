@@ -9,6 +9,7 @@ import {
   MenuItem,
   Typography,
 } from "@material-ui/core";
+import { Container } from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { PaperAdUpload } from "../DesignElements";
 
@@ -154,9 +155,25 @@ const AdUpload = () => {
 
   return (
     <>
-      <PaperAdUpload>
-        <Typography variant="h2">Skapa annons</Typography>
-        <form onSubmit={handleSubmit} autoComplete="off" noValidate>
+      <Container
+        component="form"
+        onSubmit={handleSubmit}
+        autoComplete="off"
+        noValidate
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          padding: "3px",
+          margin: "auto",
+          width: { xs: "100%", md: "75%", lg: "65%", xl: "60%" },
+        }}
+      >
+        <PaperAdUpload>
+          <br></br>
+          <Typography variant="h2" align="center">
+            Skapa annons
+          </Typography>
           <FormControl
             error={categoryError}
             required
@@ -202,12 +219,6 @@ const AdUpload = () => {
             inputProps={{ inputMode: "numeric" }}
             error={priceError}
           />
-          <TextField
-            onChange={handleChangeZip}
-            label="Postnummer, 14171"
-            id="postnummer"
-            error={zipError}
-          />
           <br></br>
           <br></br>
           <Typography variant="body2">Dina kontaktuppgifter:</Typography>
@@ -230,22 +241,28 @@ const AdUpload = () => {
             name="email"
             error={emailError}
           />
+          <TextField
+            onChange={handleChangeZip}
+            label="Postnummer, 14171"
+            id="postnummer"
+            error={zipError}
+          />
           <br></br>
           <br></br>
-          <Button
-            variant="contained"
-            color="primary"
-            type="submit"
-            sx={{ width: 170 }}
-            endIcon={<KeyboardArrowRightIcon />}
-          >
-            publicera
-          </Button>
-        </form>
+          <br></br>
+        </PaperAdUpload>
         <br></br>
         <br></br>
-        <br></br>
-      </PaperAdUpload>
+        <Button
+          variant="contained"
+          color="primary"
+          type="submit"
+          sx={{ width: 170 }}
+          endIcon={<KeyboardArrowRightIcon />}
+        >
+          publicera
+        </Button>
+      </Container>
     </>
   );
 };

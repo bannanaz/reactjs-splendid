@@ -1,6 +1,5 @@
 import AdUpload from "../../components/AdUpload";
-import Bottomnav from "../../components/Bottomnav";
-import { GoBack, MainContainerCenter } from "../../components/DesignElements";
+import { GoBack } from "../../components/DesignElements";
 
 const Create = () => {
   return (
@@ -8,10 +7,7 @@ const Create = () => {
       <br></br>
       <GoBack />
       <br></br>
-      <MainContainerCenter>
-        <AdUpload />
-      </MainContainerCenter>
-      <Bottomnav />
+      <AdUpload />
     </>
   );
 };

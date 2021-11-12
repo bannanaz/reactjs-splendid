@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Grid, Typography } from "@material-ui/core";
 
 import AdCard from "../../components/AdCard";
-import Bottomnav from "../../components/Bottomnav";
 import Categories from "../../components/Categories";
 
 const Find = () => {
@@ -37,11 +36,6 @@ const Find = () => {
             ))}
         </Grid>
       </section>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <Bottomnav />
     </>
   );
 };

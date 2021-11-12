@@ -2,8 +2,6 @@ import React from "react";
 import { Button, Typography } from "@material-ui/core";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-
-import Bottomnav from "../../components/Bottomnav";
 import { PaperAdUpload } from "../../components/DesignElements";
 
 const StyledDiv = styled.div`
@@ -64,11 +62,6 @@ const Home = () => {
           </Typography>*/}
         </StyledDiv>
       </PaperAdUpload>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <Bottomnav />
     </>
   );
 };

@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { Grid, Typography } from "@material-ui/core";
 
 import AdCard from "../../components/AdCard";
-import Bottomnav from "../../components/Bottomnav";
 
 const FilteredAdsByCategory = () => {
   const { category } = useParams();
@@ -31,7 +30,6 @@ const FilteredAdsByCategory = () => {
             </Grid>
           ))}
       </Grid>
-      <Bottomnav />
     </>
   );
 };

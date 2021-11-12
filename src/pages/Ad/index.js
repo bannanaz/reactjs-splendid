@@ -90,9 +90,6 @@ const Ad = () => {
         >
           Gör en förfrågan
         </Button>
-        <br></br>
-        <br></br>
-        <br></br>
       </MainContainerCenter>
     </>
   );

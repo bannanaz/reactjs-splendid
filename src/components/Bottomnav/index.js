@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
 import "./style.css";
+
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
@@ -34,14 +35,14 @@ const Bottomnav = () => {
           to={ROUTES.FIND}
           label="Hitta pryl"
           value="find"
-          icon={<ExploreIcon />}
+          icon={<ExploreIcon sx={{ color: "white" }} />}
         />
         <BottomNavigationAction
           component={Link}
           to={ROUTES.CREATE}
           label="Skapa annons"
           value="create"
-          icon={<AddCircleOutlineIcon />}
+          icon={<AddCircleOutlineIcon sx={{ color: "white" }} />}
         />
       </BottomNavigation>
     </Box>

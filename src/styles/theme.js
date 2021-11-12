@@ -114,6 +114,12 @@ theme.props = {
       elevation: "2",
     },
   },
+
+  MuiSvgIcon: {
+    root: {
+      color: "#258A70",
+    },
+  },
 };
 
 /*--- Style overrides -----*/
@@ -163,17 +169,17 @@ theme.overrides = {
     },
   },
 
+  MuiStack: {
+    root: {
+      width: "auto",
+    },
+  },
+
   MuiSelect: {
     root: {
       color: "#5F5F5F",
       fontSize: 14,
       width: 200,
-    },
-  },
-  MuiPrivatePickersToolbar: {
-    root: {
-      color: "blue",
-      fontFamily: "Poppins",
     },
   },
 };
