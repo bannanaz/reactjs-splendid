@@ -4,7 +4,7 @@ Det här projektet – Splendid – gör det möjligt att hyra ut sina saker och
 
 ## UX design
 
-Projektet är en implementation av en designprototyp framtagen i Figma. Öppna [https://www.figma.com/proto/jeRWvXsXyBJIRmjVgaRqo5/UX---H%C3%A5llbarhet?node-id=276%3A6790&scaling=scale-down&page-id=16%3A47&starting-point-node-id=276%3A6790] (Figma) för att se testa prototypen.
+Projektet är en implementation av en designprototyp framtagen i Figma. <a href="https://www.figma.com/proto/jeRWvXsXyBJIRmjVgaRqo5/UX---H%C3%A5llbarhet?node-id=276%3A6790&scaling=scale-down&page-id=16%3A47&starting-point-node-id=276%3A6790" target="\_blank”>Öppna Figma</a>
 
 ## Teknologier
 
