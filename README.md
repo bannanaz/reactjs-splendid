@@ -10,13 +10,11 @@ Projektet är en implementation av en designprototyp framtagen i Figma. Öppna [
 
 Splendid är skapad i React med Material UI som CSS-ramverk. Projektet sparar datan från uppladdade annonser med hjälp av JSON Server, en databas-mockup som gör det möjligt att simulera ett api-anrop.
 
-### Testa projektet!
+## Testa projektet!
 
 1. Klona ner en kopia av repot: [https://github.com/bannanaz/splendid] (https://github.com/bannanaz/splendid)
 2. "Npm install" laddar ner projektets dependencies.
 3. "Npm start" startar appen i dev mode: [http://localhost:3000](http://localhost:3000)
 4. "json-server --watch data/db.json --port 8000" startar JSON Server vilket visar upplagda annonser.
-
-## Kontakt
 
 Anna Pettersson: anlepet@gmail.com
