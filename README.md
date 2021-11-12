@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+# Splendid att du är här!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Det här projektet – Splendid – gör det möjligt att hyra ut sina saker och att hyra saker av andra. Användaren kan söka efter annonser i två kategorier, skicka förfrågan om att hyra och även publicera egna annonser.
 
-## Available Scripts
+## UX design
 
-In the project directory, you can run:
+Projektet är en implementation av en designprototyp framtagen i Figma. Öppna [https://www.figma.com/proto/jeRWvXsXyBJIRmjVgaRqo5/UX---H%C3%A5llbarhet?node-id=276%3A6790&scaling=scale-down&page-id=16%3A47&starting-point-node-id=276%3A6790] (Figma) för att se testa prototypen.
 
-### `yarn start`
+## Teknologier
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Splendid är skapad i React med Material UI som CSS-ramverk. Projektet sparar datan från uppladdade annonser med hjälp av JSON Server, en databas-mockup som gör det möjligt att simulera ett api-anrop.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Testa projektet!
 
-### `yarn test`
+1. Klona ner en kopia av repot: [https://github.com/bannanaz/splendid] (https://github.com/bannanaz/splendid)
+2. "Npm install" laddar ner projektets dependencies.
+3. "Npm start" startar appen i dev mode: [http://localhost:3000](http://localhost:3000)
+4. "json-server --watch data/db.json --port 8000" startar JSON Server vilket visar upplagda annonser.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Kontakt
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Anna Pettersson: anlepet@gmail.com

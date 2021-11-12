@@ -54,12 +54,6 @@ const Home = () => {
           >
             Börja leta
           </Button>
-          {/*<Typography variant="h6" component="h3">
-            Logga in
-          </Typography>
-          <Typography variant="h6" component="h3">
-            Skapa konto
-          </Typography>*/}
         </StyledDiv>
       </PaperAdUpload>
     </>
