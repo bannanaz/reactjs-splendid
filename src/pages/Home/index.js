@@ -12,13 +12,16 @@ const StyledDiv = styled.div`
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 40px;
 
   @media (max-width: 900px) {
     width: 100%;
+    margin-top: 10px;
   }
 
   img {
-    width: 100%;
+    width: 80%;
+    height: auto;
   }
 `;
 
